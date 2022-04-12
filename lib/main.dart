@@ -104,6 +104,23 @@ class _MyHomePageState extends State<MyHomePage> {
         false;
   }
 
+  Widget funImage(title) {
+    return ListTile(
+      onTap: () {},
+      title: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: Image.network("https://upload.wikimedia.org/wikipedia/commons"
+            "/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200p"
+            "x-Image_created_with_a_mobile_phone.png")
+      ),
+      subtitle: Text(title,
+          style: TextStyle(
+              color: Provider.of<MyProvider>(context).isDark? Colors.white:Colors.black,
+              fontSize: getWidth()*0.042,
+              fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center),
+    );
+  }
   @override
   void initState() {
     Provider.of<MyProvider>(context, listen: false).getDarkMode();
@@ -115,19 +132,83 @@ class _MyHomePageState extends State<MyHomePage> {
       child: WillPopScope(
         onWillPop: _onWillPop,
         child: Scaffold(
-          appBar: AppBar(
-            title: const Text("Home"),
-            centerTitle: true,
-          ),
-          drawer: const MyDrawer(),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[],
+          appBar: const MainAppBar(title: "Home"),
+          // drawer: const MyDrawer(),
+          body: Padding(
+            padding: const EdgeInsets.fromLTRB(2, 15, 2, 0),
+            child: GridView(
+              shrinkWrap: true,
+              // physics: const NeverScrollableScrollPhysics(),
+              gridDelegate:
+              const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 1,
+                crossAxisSpacing: 1,
+                childAspectRatio: 1,
+              ),
+              children: [
+                funImage("left tooth"),
+                funImage("title"),
+                funImage("title"),
+                funImage("title"),
+                funImage("title"),
+              ],
             ),
           ),
         ),
       ),
     );
+  }
+}
+
+class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final String title;
+  final double barHeight = 50.0;
+
+  const MainAppBar({required this.title});
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 80.0);
+
+  @override
+  Widget build(BuildContext context) {
+    return PreferredSize(
+        child: ClipPath(
+          clipper: WaveClip(),
+          child: Container(
+            color: Colors.blue,
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const SizedBox(height: 40),
+                Text(title,style: const TextStyle(fontSize: 24,color: Colors.white)),
+              ],
+            ),
+          ),
+        ),
+        preferredSize: const Size.fromHeight(kToolbarHeight + 100));
+  }
+}
+
+class WaveClip extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+    final lowPoint = size.height - 30;
+    final highPoint = size.height - 60;
+
+    path.lineTo(0, size.height);
+    path.quadraticBezierTo(
+        size.width / 4, highPoint, size.width / 2, lowPoint);
+    path.quadraticBezierTo(
+        3 / 4 * size.width, size.height, size.width, lowPoint);
+    path.lineTo(size.width, 0);
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
   }
 }

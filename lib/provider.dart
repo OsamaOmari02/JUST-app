@@ -2,6 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyProvider with ChangeNotifier {
+
+  Future<bool> onWillPop(ctx) async {
+    await Navigator.of(ctx).pushReplacementNamed('MyHomepage');
+    throw "";
+  }
+
   bool isDark = false;
 
   getDarkMode() async {
@@ -16,10 +22,6 @@ class MyProvider with ChangeNotifier {
     isDark = value;
     notifyListeners();
   }
-
-  Future<bool> onWillPop(ctx) async {
-    await Navigator.of(ctx).pushReplacementNamed('MyHomepage');
-    throw "";
-  }
+  //---------------------------dark mode -----------------------------
 
 }
