@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:medical_info_just/drawer.dart';
+import 'package:medical_info_just/nextPage.dart';
 import 'package:medical_info_just/provider.dart';
 import 'package:medical_info_just/settings.dart';
 import 'package:provider/provider.dart';
+
+import 'Mouth.dart';
+import 'Nice.dart';
+import 'Treat.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +32,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -39,6 +43,12 @@ class MyApp extends StatelessWidget {
       routes: {
         'MyHomepage': (context) => const MyHomePage(),
         'settings' : (context) => const Settings(),
+        'NextPage' : (context) => const NextPage(),
+        'page1' : (context) => const Mouth(),
+        'page2' : (context) => const Nice(),
+        'page3' : (context) => const Treat(),
+        // 'page1' : (context) => const Mouth(),
+        // 'page1' : (context) => const Mouth(),
       },
     );
   }
@@ -104,14 +114,16 @@ class _MyHomePageState extends State<MyHomePage> {
         false;
   }
 
-  Widget funImage(title) {
+  Widget funImage(title,image,route) {
     return ListTile(
-      onTap: () {},
+      onTap: () => Navigator.of(context).pushNamed(route),
       title: ClipRRect(
         borderRadius: BorderRadius.circular(20.0),
-        child: Image.network("https://upload.wikimedia.org/wikipedia/commons"
-            "/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200p"
-            "x-Image_created_with_a_mobile_phone.png")
+        child: Image.asset(
+          image,
+          height: getHeight() * 0.155,
+          fit: BoxFit.fill,
+        ),
       ),
       subtitle: Text(title,
           style: TextStyle(
@@ -131,28 +143,31 @@ class _MyHomePageState extends State<MyHomePage> {
     return SafeArea(
       child: WillPopScope(
         onWillPop: _onWillPop,
-        child: Scaffold(
-          appBar: const MainAppBar(title: "Home"),
-          // drawer: const MyDrawer(),
-          body: Padding(
-            padding: const EdgeInsets.fromLTRB(2, 15, 2, 0),
-            child: GridView(
-              shrinkWrap: true,
-              // physics: const NeverScrollableScrollPhysics(),
-              gridDelegate:
-              const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 1,
-                crossAxisSpacing: 1,
-                childAspectRatio: 1,
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: Scaffold(
+            appBar: const MainAppBar(title: "صحة المجتمع"),
+            // drawer: const MyDrawer(),
+            body: Padding(
+              padding: const EdgeInsets.fromLTRB(2, 15, 2, 0),
+              child: GridView(
+                shrinkWrap: true,
+                // physics: const NeverScrollableScrollPhysics(),
+                gridDelegate:
+                const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 1,
+                  crossAxisSpacing: 1,
+                  childAspectRatio: 1.2,
+                ),
+                children: [
+                  funImage("صحة الفم",'images/صحة الفم/صحة الفم.png','NextPage'),
+                  funImage("طب الأسنان التجميلي",'images/طب الاسنان التجميلي/طب الاسنان التجميلي.png','page2'),
+                  funImage("العلاج الوقائي",'images/العلاج الوقائي/العلاج الوقائي.jpg','page3'),
+                  // funImage("title",'images/العلاج الوقائي/العلاج الوقائي.jpg'),
+                  // funImage("title"),
+                ],
               ),
-              children: [
-                funImage("left tooth"),
-                funImage("title"),
-                funImage("title"),
-                funImage("title"),
-                funImage("title"),
-              ],
             ),
           ),
         ),
