@@ -18,8 +18,7 @@ class _TreatState extends State<Treat> {
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: WillPopScope(
-          onWillPop: () => Provider.of<MyProvider>(context, listen: false)
-              .onWillPop(context),
+          onWillPop: ()=> Provider.of<MyProvider>(context,listen: false).onWillPop(context,'NextPage'),
           child: Scaffold(
             appBar: AppBar(
               centerTitle: true,

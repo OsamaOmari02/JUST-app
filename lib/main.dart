@@ -6,7 +6,10 @@ import 'package:medical_info_just/provider.dart';
 import 'package:medical_info_just/settings.dart';
 import 'package:provider/provider.dart';
 
-import 'Mouth.dart';
+import 'Mouth1.dart';
+import 'Mouth2.dart';
+import 'Mouth3.dart';
+import 'Mouth4.dart';
 import 'Nice.dart';
 import 'Treat.dart';
 
@@ -33,7 +36,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
       ),
       home: const MyHomePage(),
       themeMode: Provider.of<MyProvider>(context).isDark
@@ -41,12 +44,13 @@ class MyApp extends StatelessWidget {
           : ThemeMode.light,
       darkTheme: ThemeData(brightness: Brightness.dark, accentColor: Colors.white),
       routes: {
-        'MyHomepage': (context) => const MyHomePage(),
+        'MyHomePage': (context) => const MyHomePage(),
         'settings' : (context) => const Settings(),
         'NextPage' : (context) => const NextPage(),
-        'page1' : (context) => const Mouth(),
-        'page2' : (context) => const Nice(),
-        'page3' : (context) => const Treat(),
+        'MouthPage1' : (context) => const Mouth1(),
+        'MouthPage2' : (context) => const Mouth2(),
+        'MouthPage3' : (context) => const Mouth3(),
+        'MouthPage4' : (context) => const Mouth4(),
         // 'page1' : (context) => const Mouth(),
         // 'page1' : (context) => const Mouth(),
       },
@@ -158,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   crossAxisCount: 2,
                   mainAxisSpacing: 1,
                   crossAxisSpacing: 1,
-                  childAspectRatio: 1.2,
+                  childAspectRatio: 1.1,
                 ),
                 children: [
                   funImage("صحة الفم",'images/صحة الفم/صحة الفم.png','NextPage'),
@@ -191,7 +195,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: ClipPath(
           clipper: WaveClip(),
           child: Container(
-            color: Colors.blue,
+            color: Colors.indigo,
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

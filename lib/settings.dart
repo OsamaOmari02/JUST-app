@@ -27,7 +27,7 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: WillPopScope(
-        onWillPop: ()=> Provider.of<MyProvider>(context, listen: false).onWillPop(context),
+        onWillPop: ()=> Provider.of<MyProvider>(context,listen: false).onWillPop(context,'NextPage'),
         child: Scaffold(
           appBar: AppBar(
             title: const Text("Settings"),

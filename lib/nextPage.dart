@@ -17,8 +17,7 @@ class _NextPageState extends State<NextPage> {
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: WillPopScope(
-          onWillPop: () => Provider.of<MyProvider>(context, listen: false)
-              .onWillPop(context),
+          onWillPop: ()=> Provider.of<MyProvider>(context,listen: false).onWillPop(context,'NextPage'),
           child: Scaffold(
             appBar: AppBar(
               centerTitle: true,
@@ -27,9 +26,10 @@ class _NextPageState extends State<NextPage> {
             body: ListView(
               padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
               children: [
-                _listTile("asd", 'page1'),
-                _listTile("asd", 'page1'),
-                _listTile("asd", 'page1'),
+                _listTile("سرطان الفم", 'MouthPage1'),
+                _listTile("كسور ورضوض الأسنان", 'MouthPage2'),
+                _listTile("تفريش الأسنان", 'MouthPage3'),
+                _listTile("خيط الأسنان", 'MouthPage4'),
               ],
             ),
           ),
@@ -42,9 +42,9 @@ class _NextPageState extends State<NextPage> {
       padding: const EdgeInsets.all(6.0),
       child: ListTile(
         title: Text(text,
-          style: const TextStyle(fontSize: 19),
+          style: const TextStyle(fontSize: 19,color: Colors.black),
         ),
-        trailing: const Icon(Icons.arrow_forward),
+        trailing: const Icon(Icons.arrow_forward,color: Colors.indigo,),
         onTap: () => Navigator.of(context).pushNamed(route),
       ),
     );

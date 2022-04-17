@@ -2,9 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyProvider with ChangeNotifier {
-
-  Future<bool> onWillPop(ctx) async {
-    await Navigator.of(ctx).pushReplacementNamed('MyHomepage');
+  Future<bool> onWillPop(BuildContext context, route) async {
+    if (route == 'NextPage')
+      await Navigator.of(context).pushReplacementNamed('MyHomePage');
+    else if (route == 'page1')
+      await Navigator.of(context).pushReplacementNamed('NextPage');
     throw "";
   }
 
@@ -22,6 +24,6 @@ class MyProvider with ChangeNotifier {
     isDark = value;
     notifyListeners();
   }
-  //---------------------------dark mode -----------------------------
+//---------------------------dark mode -----------------------------
 
 }
