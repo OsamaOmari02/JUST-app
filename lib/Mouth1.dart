@@ -40,9 +40,10 @@ class _Mouth1State extends State<Mouth1> {
                 padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                 children: [
                   SizedBox(height: getHeight() * 0.015),
-                  buildAutoSizeText(mouth().s1, 18.00),
+                  buildAutoSizeText("سرطان الفم:", 18.00,Colors.red,FontWeight.bold),
+                  buildAutoSizeText(mouth().s1, 17.00),
                   buildAutoSizeText(mouth().s2, 17.00),
-                  buildAutoSizeText(mouth().s3, 18.00),
+                  buildAutoSizeText(mouth().s3, 17.00,Colors.deepOrangeAccent),
                   buildAutoSizeText(
                       "الأعراض :", 18.00, Colors.red, FontWeight.bold),
                   buildAutoSizeText(mouth().s4, 17.00),

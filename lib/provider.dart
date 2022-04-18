@@ -26,4 +26,5 @@ class MyProvider with ChangeNotifier {
   }
 //---------------------------dark mode -----------------------------
 
+  String idx="";
 }
