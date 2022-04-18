@@ -1,6 +1,7 @@
-# medical_info_just
+# صحة فم المجتمع
 
-JUST app
+It's a mobile application for reviewing some information and instructions about the human mouth especially the teeth.
+Associated with Jordan University of Science and Technology - Faculty of Applied Science
 
 ## Getting Started
 
