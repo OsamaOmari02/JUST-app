@@ -25,6 +25,7 @@ class _Mouth1State extends State<Mouth1> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context,listen: false);
     return SafeArea(
       child: Directionality(
         textDirection: TextDirection.rtl,
@@ -40,22 +41,22 @@ class _Mouth1State extends State<Mouth1> {
                 padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                 children: [
                   SizedBox(height: getHeight() * 0.015),
-                  buildAutoSizeText("سرطان الفم:", 18.00,Colors.red,FontWeight.bold),
-                  buildAutoSizeText(mouth().s1, 17.00),
-                  buildAutoSizeText(mouth().s2, 17.00),
-                  buildAutoSizeText(mouth().s3, 17.00,Colors.deepOrangeAccent),
-                  buildAutoSizeText(
+                  provider.buildAutoSizeText("سرطان الفم:", 18.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText(mouth().s1, 17.00),
+                  provider.buildAutoSizeText(mouth().s2, 17.00),
+                  provider.buildAutoSizeText(mouth().s3, 17.00,Colors.deepOrangeAccent),
+                  provider.buildAutoSizeText(
                       "الأعراض :", 18.00, Colors.red, FontWeight.bold),
-                  buildAutoSizeText(mouth().s4, 17.00),
+                  provider.buildAutoSizeText(mouth().s4, 17.00),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Image.asset('images/صحة الفم/1.png'),
                   ),
-                  buildAutoSizeText("عوامل خطر الإصابة :", 18.00,Colors.red,FontWeight.bold),
-                  buildAutoSizeText(mouth().s5, 17.00),
-                  buildAutoSizeText(mouth().s6, 17.00),
-                  buildAutoSizeText("3- ضعف جهاز المناعة .", 17.00),
-                  buildAutoSizeText("4- تعرض الشفاه الى أشعة الشمس لفترة طويلة .", 17.00),
+                  provider.buildAutoSizeText("عوامل خطر الإصابة :", 18.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText(mouth().s5, 17.00),
+                  provider.buildAutoSizeText(mouth().s6, 17.00),
+                  provider.buildAutoSizeText("3- ضعف جهاز المناعة .", 17.00),
+                  provider.buildAutoSizeText("4- تعرض الشفاه الى أشعة الشمس لفترة طويلة .", 17.00),
                   SizedBox(height: getHeight() * 0.05),
                 ],
               ),
@@ -66,17 +67,5 @@ class _Mouth1State extends State<Mouth1> {
     );
   }
 
-  Padding buildAutoSizeText(text, size, [color = Colors.black, weight]) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: AutoSizeText(
-        text,
-        style: GoogleFonts.ibmPlexSansArabic(
-          textStyle: TextStyle(fontSize: size, color: color, fontWeight: weight),
-        ),
-        overflow: TextOverflow.fade,
-      ),
-    );
-  }
 }
 

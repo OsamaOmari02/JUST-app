@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:medical_info_just/Resources.dart';
-import 'package:medical_info_just/drawer.dart';
+import 'package:medical_info_just/Treat2.dart';
 import 'package:medical_info_just/nextPage.dart';
 import 'package:medical_info_just/provider.dart';
 import 'package:medical_info_just/settings.dart';
@@ -13,7 +12,9 @@ import 'Mouth3.dart';
 import 'Mouth4.dart';
 import 'Nice1.dart';
 import 'Nice2.dart';
-import 'Treat.dart';
+import 'Nice3.dart';
+import 'Nice4.dart';
+import 'Treat1.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +22,6 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  // await Firebase.initializeApp();
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider<MyProvider>(create: (_) => MyProvider()),
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.green,
       ),
       home: const MyHomePage(),
       themeMode: Provider.of<MyProvider>(context).isDark
@@ -50,16 +50,19 @@ class MyApp extends StatelessWidget {
         'MyHomePage': (context) => const MyHomePage(),
         'settings': (context) => const Settings(),
         'NextPage': (context) => const NextPage(),
-        'Resources': (context) => const Resources(),
         'MouthPage1': (context) => const Mouth1(),
         'MouthPage2': (context) => const Mouth2(),
         'MouthPage3': (context) => const Mouth3(),
         'MouthPage4': (context) => const Mouth4(),
         'NicePage1': (context) => const Nice1(),
         'NicePage2': (context) => const Nice2(),
-        // 'NicePage3': (context) => const Nice3(),
-        // 'NicePage4': (context) => const Nice4(),
-        // 'NicePage5': (context) => const Nice5(),
+        'NicePage3': (context) => const Nice3(),
+        'NicePage4': (context) => const Nice4(),
+        'TreatPage1': (context) => const Treat1(),
+        'TreatPage2': (context) => const Treat2(),
+        // 'TreatPage3': (context) => const Treat3(),
+        // 'TreatPage4': (context) => const Treat4(),
+
       },
     );
   }
@@ -194,7 +197,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: ClipPath(
           clipper: WaveClip(),
           child: Container(
-            color: Colors.indigo,
+            color: Colors.green,
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

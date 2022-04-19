@@ -25,11 +25,12 @@ class _Mouth2State extends State<Mouth2> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context,listen: false);
     return SafeArea(
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: WillPopScope(
-          onWillPop: ()=> Provider.of<MyProvider>(context,listen: false).onWillPop(context,'page1'),
+          onWillPop: ()=> provider.onWillPop(context,'page1'),
           child: Scaffold(
             appBar: AppBar(
               centerTitle: true,
@@ -40,33 +41,33 @@ class _Mouth2State extends State<Mouth2> {
                 padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                 children: [
                   SizedBox(height: getHeight() * 0.015),
-                  buildAutoSizeText(mouth().s7, 18.00),
-                  buildAutoSizeText('كسر السن : ', 19.00,Colors.red,FontWeight.bold),
-                  buildAutoSizeText(mouth().s8, 18.00),
+                  provider.buildAutoSizeText(mouth().s7, 18.00),
+                  provider.buildAutoSizeText('كسر السن : ', 19.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText(mouth().s8, 18.00),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Image.asset('images/صحة الفم/3.png'),
                   ),
-                  buildAutoSizeText(mouth().s9, 18.00),
-                  buildAutoSizeText("أسباب الاصابه بصدمات الاسنان :", 19.00,Colors.red,FontWeight.bold),
-                  buildAutoSizeText(mouth().s10, 17.00),
+                  provider.buildAutoSizeText(mouth().s9, 18.00),
+                  provider.buildAutoSizeText("أسباب الاصابه بصدمات الاسنان :", 19.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText(mouth().s10, 17.00),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Image.asset('images/صحة الفم/2.png'),
                   ),
-                  buildAutoSizeText(mouth().s11, 18.00,Colors.red,FontWeight.bold),
-                  buildAutoSizeText(mouth().s12, 18.00),
-                  buildAutoSizeText("من المهم استشارة طبيب الأسنان في أسرع وقت ممكن لمنع أي أضرار ، ولكن في غضون ذلك ، يمكن اتباع إجراءات الرعاية الذاتية الآتية : ", 17.00,Colors.green),
-                  buildAutoSizeText(mouth().s13, 17.00),
+                  provider.buildAutoSizeText(mouth().s11, 18.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText(mouth().s12, 18.00),
+                  provider.buildAutoSizeText("من المهم استشارة طبيب الأسنان في أسرع وقت ممكن لمنع أي أضرار ، ولكن في غضون ذلك ، يمكن اتباع إجراءات الرعاية الذاتية الآتية : ", 17.00,Colors.green,FontWeight.bold),
+                  provider.buildAutoSizeText(mouth().s13, 17.00),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Image.asset('images/صحة الفم/5.png'),
                   ),
-                  buildAutoSizeText("علاج كسور الاسنان الامامية :", 18.00,Colors.green,FontWeight.bold),
-                  buildAutoSizeText("الحشوات : ", 18.00,Colors.red),
-                  buildAutoSizeText(mouth().s14, 17.00),
-                  buildAutoSizeText("التصرف الصحيح عند التعرض لكسر السن او سقوطه : ", 18.00,Colors.red),
-                  buildAutoSizeText(mouth().s15, 17.00),
+                  provider.buildAutoSizeText("علاج كسور الاسنان الامامية :", 18.00,Colors.green,FontWeight.bold),
+                  provider.buildAutoSizeText("الحشوات : ", 18.00,Colors.red),
+                  provider.buildAutoSizeText(mouth().s14, 17.00),
+                  provider.buildAutoSizeText("التصرف الصحيح عند التعرض لكسر السن او سقوطه : ", 18.00,Colors.red),
+                  provider.buildAutoSizeText(mouth().s15, 17.00),
                   Image.asset('images/صحة الفم/4.png'),
                 ],
               ),
@@ -77,17 +78,6 @@ class _Mouth2State extends State<Mouth2> {
     );
   }
 
-  Padding buildAutoSizeText(text, size, [color = Colors.black, weight]) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: AutoSizeText(
-        text,
-        style: GoogleFonts.ibmPlexSansArabic(
-          textStyle: TextStyle(fontSize: size, color: color, fontWeight: weight),
-        ),
-        overflow: TextOverflow.fade,
-      ),
-    );
-  }
+
 }
 

@@ -25,6 +25,7 @@ class _Nice1State extends State<Nice1> {
   getHeight() => height = MediaQuery.of(context).size.height;
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context,listen: false);
     return SafeArea(
       child: Directionality(
         textDirection: TextDirection.rtl,
@@ -39,27 +40,27 @@ class _Nice1State extends State<Nice1> {
               padding: const EdgeInsets.fromLTRB(2, 15, 2, 0),
               children: [
                 SizedBox(height: getHeight() * 0.015),
-                buildAutoSizeText("تبييض الأسنان :", 18.00,Colors.green,FontWeight.bold),
-                buildAutoSizeText(Nice().s2, 17.00),
-                buildAutoSizeText("• انواع التبييض:", 18.00,Colors.green,FontWeight.bold),
-                buildAutoSizeText(Nice().s3, 17.00),
+                provider.buildAutoSizeText("تبييض الأسنان :", 18.00,Colors.green,FontWeight.bold),
+                provider.buildAutoSizeText(Nice().s2, 17.00),
+                provider.buildAutoSizeText("• انواع التبييض:", 18.00,Colors.green,FontWeight.bold),
+                provider.buildAutoSizeText(Nice().s3, 17.00),
                 Image.asset('images/طب الاسنان التجميلي/1.png'),
-                buildAutoSizeText(Nice().s4, 17.00),
+                provider.buildAutoSizeText(Nice().s4, 17.00),
                 Image.asset('images/طب الاسنان التجميلي/2.png'),
-                buildAutoSizeText(Nice().s5, 17.00),
+                provider.buildAutoSizeText(Nice().s5, 17.00),
                 Image.asset('images/طب الاسنان التجميلي/3.png'),
-                buildAutoSizeText("• العوامل التي تؤثر في بياض الأسنان :", 18.00,Colors.red,FontWeight.bold),
-                buildAutoSizeText(Nice().s6, 17.00),
+                provider.buildAutoSizeText("• العوامل التي تؤثر في بياض الأسنان :", 18.00,Colors.red,FontWeight.bold),
+                provider.buildAutoSizeText(Nice().s6, 17.00),
                 Padding(
                   padding: const EdgeInsets.all(25.0),
                   child: Image.asset('images/طب الاسنان التجميلي/4.png'),
                 ),
-                buildAutoSizeText("• الاعراض الجانبية بعد تبييض الاسنان: ", 18.00,Colors.red,FontWeight.bold),
-                buildAutoSizeText(Nice().s7, 17.00),
-                buildAutoSizeText("• اضرار تبييض الاسنان :", 18.00,Colors.red,FontWeight.bold),
-                buildAutoSizeText(Nice().s8, 17.00),
-                buildAutoSizeText(Nice().s9, 18.00,Colors.deepOrange),
-                buildAutoSizeText(Nice().s10, 17.00),
+                provider.buildAutoSizeText("• الاعراض الجانبية بعد تبييض الاسنان: ", 18.00,Colors.red,FontWeight.bold),
+                provider.buildAutoSizeText(Nice().s7, 17.00),
+                provider.buildAutoSizeText("• اضرار تبييض الاسنان :", 18.00,Colors.red,FontWeight.bold),
+                provider.buildAutoSizeText(Nice().s8, 17.00),
+                provider.buildAutoSizeText(Nice().s9, 18.00,Colors.deepOrange),
+                provider.buildAutoSizeText(Nice().s10, 17.00),
                 Image.asset('images/طب الاسنان التجميلي/5.png'),
               ],
             ),
@@ -69,16 +70,4 @@ class _Nice1State extends State<Nice1> {
     );
   }
 
-  Padding buildAutoSizeText(text, size, [color = Colors.black, weight]) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: AutoSizeText(
-        text,
-        style: GoogleFonts.ibmPlexSansArabic(
-          textStyle: TextStyle(fontSize: size, color: color, fontWeight: weight),
-        ),
-        overflow: TextOverflow.fade,
-      ),
-    );
-  }
 }

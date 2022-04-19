@@ -56,10 +56,11 @@ class _NextPageState extends State<NextPage> {
                         ? ListView(
                             padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                             children: [
-                              _listTile("سرطان الفم", 'MouthPage1'),
-                              _listTile("كسور ورضوض الأسنان", 'MouthPage2'),
-                              _listTile("تفريش الأسنان", 'MouthPage3'),
-                              _listTile("خيط الأسنان", 'MouthPage4'),
+                              buildAutoSizeText(Treat().s1, 16.00),
+                              _listTile("المادة السادة الوقائية", 'TreatPage1'),
+                              _listTile("الفلورايد", 'TreatPage2'),
+                              _listTile("تفريش الأسنان", 'TreatPage3'),
+                              _listTile("خيط الأسنان", 'TreatPage4'),
                             ],
                           )
                         : ListView(
@@ -82,7 +83,7 @@ class _NextPageState extends State<NextPage> {
         ),
         trailing: const Icon(
           Icons.arrow_forward,
-          color: Colors.indigo,
+          color: Colors.green,
         ),
         onTap: () => Navigator.of(context).pushNamed(route),
       ),
@@ -123,8 +124,10 @@ class _NextPageState extends State<NextPage> {
               else if (Provider.of<MyProvider>(context).idx ==
                   'طب الأسنان التجميلي')
                 return bottomSheet2();
-              else
-                return bottomSheet1();
+              else if (Provider.of<MyProvider>(context).idx ==
+                  'العلاج الوقائي')
+                return bottomSheet3();
+              return bottomSheet1();
             }),
         child: Text('المراجع'));
   }
@@ -236,9 +239,34 @@ class _NextPageState extends State<NextPage> {
         ),
         body: ListView(
           children: [
-            buildAutoSizeText(Nice().s23, 16.00),
+            buildAutoSizeText(Nice().s30, 16.00),
             _textButton('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3713859/.'),
             _textButton('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6312728/.'),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Directionality bottomSheet3() {
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            "المراجع",
+            style: TextStyle(
+                color: CupertinoColors.black, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: Theme.of(context).canvasColor,
+          elevation: 1,
+        ),
+        body: ListView(
+          children: [
+            buildAutoSizeText(Treat().res, 16.00),
+            _textButton('https://teethtalkgirl.com/videos/dental-sealants'),
+            _textButton('https://www.oceansightdental.com/preventive-dentistry-san-clemente/dental-sealants-san-clemente/'),
           ],
         ),
       ),

@@ -24,12 +24,9 @@ class _Mouth4State extends State<Mouth4> {
 
   getHeight() => height = MediaQuery.of(context).size.height;
 
-  void _launch(url) async {
-    if (!await launch(url)) throw 'Could not launch $url';
-  }
-
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context, listen: false);
     return SafeArea(
       child: Directionality(
         textDirection: TextDirection.rtl,
@@ -46,17 +43,17 @@ class _Mouth4State extends State<Mouth4> {
                 padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                 children: [
                   SizedBox(height: getHeight() * 0.015),
-                  buildAutoSizeText(mouth().s22, 18.00),
-                  buildAutoSizeText("انواع خيط الأسنان :", 18.00, Colors.green,
-                      FontWeight.bold),
-                  buildAutoSizeText(
+                  provider.buildAutoSizeText(mouth().s22, 18.00),
+                  provider.buildAutoSizeText("انواع خيط الأسنان :", 18.00,
+                      Colors.green, FontWeight.bold),
+                  provider.buildAutoSizeText(
                       "المشع وغير المشع، ذو خيط احادي و متعدد الخيوط.", 17.00),
                   Image.asset('images/صحة الفم/11.png'),
-                  buildAutoSizeText("فوائد استخدام خيط الأسنان :", 18.00,
-                      Colors.green, FontWeight.bold),
+                  provider.buildAutoSizeText("فوائد استخدام خيط الأسنان :",
+                      18.00, Colors.green, FontWeight.bold),
                   Row(
                     children: [
-                      buildAutoSizeText(mouth().s23, 17.00),
+                      provider.buildAutoSizeText(mouth().s23, 17.00),
                       Expanded(
                           child: Container(
                         child: Image.asset('images/صحة الفم/10.png'),
@@ -66,8 +63,8 @@ class _Mouth4State extends State<Mouth4> {
                   ),
                   Row(
                     children: [
-                      buildAutoSizeText("كيفية استخدام خيط الأسنان :", 18.00,
-                          Colors.green, FontWeight.bold),
+                      provider.buildAutoSizeText("كيفية استخدام خيط الأسنان :",
+                          18.00, Colors.green, FontWeight.bold),
                       Expanded(child: SizedBox(width: 1)),
                       TextButton(
                           child: Text("فيديو",
@@ -75,37 +72,26 @@ class _Mouth4State extends State<Mouth4> {
                                   fontWeight: FontWeight.bold,
                                   decoration: TextDecoration.underline,
                                   color: Colors.blue)),
-                          onPressed: () async => await launch(
-                              'https://www.youtube.com/watch?v=PQGiiRhPXXs')),
+                          onPressed: () async {
+                            try {
+                              await launch(
+                                  'https://www.youtube.com/watch?v=PQGiiRhPXXs');
+                            } catch (e) {
+                              print(e);
+                            }
+                          }),
                     ],
                   ),
-                  buildAutoSizeText(mouth().s24, 17.00),
-                  buildAutoSizeText("أضرار خيط الأسنان :", 18.00, Colors.red,
-                      FontWeight.bold),
-                  buildAutoSizeText(mouth().s25, 17.00),
-                  // buildAutoSizeText(mouth().s6, 17.00),
-                  // buildAutoSizeText("3- ضعف جهاز المناعة .", 17.00),
-                  // buildAutoSizeText("4- تعرض الشفاه الى أشعة الشمس لفترة طويلة .", 17.00),
+                  provider.buildAutoSizeText(mouth().s24, 17.00),
+                  provider.buildAutoSizeText("أضرار خيط الأسنان :", 18.00,
+                      Colors.red, FontWeight.bold),
+                  provider.buildAutoSizeText(mouth().s25, 17.00),
                   SizedBox(height: getHeight() * 0.05),
                 ],
               ),
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Padding buildAutoSizeText(text, size, [color = Colors.black, weight]) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: AutoSizeText(
-        text,
-        style: GoogleFonts.ibmPlexSansArabic(
-          textStyle:
-              TextStyle(fontSize: size, color: color, fontWeight: weight),
-        ),
-        overflow: TextOverflow.fade,
       ),
     );
   }

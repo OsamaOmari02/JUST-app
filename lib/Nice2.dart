@@ -25,6 +25,7 @@ class _Nice2State extends State<Nice2> {
   getHeight() => height = MediaQuery.of(context).size.height;
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context,listen: false);
     return SafeArea(
       child: Directionality(
         textDirection: TextDirection.rtl,
@@ -39,36 +40,23 @@ class _Nice2State extends State<Nice2> {
               padding: const EdgeInsets.fromLTRB(2, 15, 2, 0),
               children: [
                 SizedBox(height: getHeight() * 0.015),
-                buildAutoSizeText(Nice().s11, 17.00),
-                buildAutoSizeText("• المفهوم :", 18.00,Colors.green,FontWeight.bold),
-                buildAutoSizeText(Nice().s12, 17.00),
-                buildAutoSizeText("• المميزات :", 18.00,Colors.green,FontWeight.bold),
-                buildAutoSizeText(Nice().s13, 17.00),
+                provider.buildAutoSizeText(Nice().s11, 17.00),
+                provider.buildAutoSizeText("• المفهوم :", 18.00,Colors.green,FontWeight.bold),
+                provider.buildAutoSizeText(Nice().s12, 17.00),
+                provider.buildAutoSizeText("• المميزات :", 18.00,Colors.green,FontWeight.bold),
+                provider.buildAutoSizeText(Nice().s13, 17.00),
                 Image.asset('images/طب الاسنان التجميلي/6.png'),
-                buildAutoSizeText("• انواع مجوهرات الأسنان :", 18.00,Colors.green,FontWeight.bold),
-                buildAutoSizeText("تتعدد أنواع المجوهرات فهناك  للفم، وأيضا  للانف ، وأخيراً  للأسنان أو اللسان.", 17.00),
-                buildAutoSizeText("• اضرار مجوهرات الأسنان :", 18.00,Colors.red,FontWeight.bold),
-                buildAutoSizeText(Nice().s14, 17.00),
+                provider.buildAutoSizeText("• انواع مجوهرات الأسنان :", 18.00,Colors.green,FontWeight.bold),
+                provider.buildAutoSizeText("تتعدد أنواع المجوهرات فهناك  للفم، وأيضا  للانف ، وأخيراً  للأسنان أو اللسان.", 17.00),
+                provider.buildAutoSizeText("• اضرار مجوهرات الأسنان :", 18.00,Colors.red,FontWeight.bold),
+                provider.buildAutoSizeText(Nice().s14, 17.00),
                 Container(child: Image.asset('images/طب الاسنان التجميلي/7.png'),padding: const EdgeInsets.all(8.0),height: getHeight()*0.32),
-                buildAutoSizeText("• النصائح والإرشادات :", 18.00,Colors.green,FontWeight.bold),
-                buildAutoSizeText(Nice().s15, 17.00),
+                provider.buildAutoSizeText("• النصائح والإرشادات :", 18.00,Colors.green,FontWeight.bold),
+                provider.buildAutoSizeText(Nice().s15, 17.00),
               ],
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Padding buildAutoSizeText(text, size, [color = Colors.black, weight]) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: AutoSizeText(
-        text,
-        style: GoogleFonts.ibmPlexSansArabic(
-          textStyle: TextStyle(fontSize: size, color: color, fontWeight: weight),
-        ),
-        overflow: TextOverflow.fade,
       ),
     );
   }
