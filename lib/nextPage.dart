@@ -64,23 +64,41 @@ class _NextPageState extends State<NextPage> {
                             ],
                           )
                         : Provider.of<MyProvider>(context, listen: false).idx ==
-                                'العلاج الوقائي'
+                                'العادات الفموية السيئة'
                             ? ListView(
                                 padding:
                                     const EdgeInsets.fromLTRB(10, 15, 10, 0),
                                 children: [
-                                  buildAutoSizeText(Treat().s1, 16.00),
+                                  buildAutoSizeText(Habit().s1, 16.00),
                                   _listTile(
-                                      "العادة الفموية السيئة", 'TreatPage1'),
-                                  _listTile("الفلورايد", 'TreatPage2'),
-                                  _listTile("الزيارة المنتظمة لطبيب الاسنان",
-                                      'TreatPage3'),
-                                  _listTile("خيط الأسنان", 'TreatPage4'),
+                                      "استخدام الأسنان كأداة",'HabitPage1'),
+                                  _listTile("قضم الأظافر",'HabitPage2'),
+                                  _listTile("صرير الأسنان",'HabitPage3'),
+                                  _listTile("أخطاء تنظيف الأسنان", 'HabitPage4'),
+                                  _listTile("قضم قطع الثلج", 'HabitPage5'),
+                                  _listTile("الوجبات الخفيفة", 'HabitPage6'),
                                 ],
                               )
-                            : ListView(
-                                children: [],
-                              ),
+                            : Provider.of<MyProvider>(context, listen: false)
+                                        .idx ==
+                                    'أمراض اللثة'
+                                ? ListView(
+                                    padding: const EdgeInsets.fromLTRB(
+                                        10, 15, 10, 0),
+                                    children: [
+                                      // buildAutoSizeText(Dis().s1, 16.00),
+                                      _listTile("",
+                                          'DisPage1'),
+                                      _listTile("", 'DisPage2'),
+                                      _listTile(
+                                          "",
+                                          'DisPage3'),
+                                      _listTile("", 'DisPage4'),
+                                    ],
+                                  )
+                                : ListView(
+                                    children: [],
+                                  ),
             floatingActionButton: _floatingFun(),
           ),
         ),
@@ -142,9 +160,13 @@ class _NextPageState extends State<NextPage> {
                 return bottomSheet2();
               else if (Provider.of<MyProvider>(context).idx == 'العلاج الوقائي')
                 return bottomSheet3();
+              else if (Provider.of<MyProvider>(context).idx == 'أمراض اللثة')
+                return bottomSheet4();
+              else if (Provider.of<MyProvider>(context).idx == 'العادات الفموية السيئة')
+                return bottomSheet5();
               return bottomSheet1();
             }),
-        child: Text('المراجع'));
+        child: const Text('المراجع'));
   }
 
   Directionality bottomSheet1() {
@@ -153,9 +175,9 @@ class _NextPageState extends State<NextPage> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text(
+          title: const Text(
             "المراجع",
-            style: TextStyle(
+            style: const TextStyle(
                 color: CupertinoColors.black, fontWeight: FontWeight.bold),
           ),
           backgroundColor: Theme.of(context).canvasColor,
@@ -292,4 +314,67 @@ class _NextPageState extends State<NextPage> {
       ),
     );
   }
+
+  Directionality bottomSheet4() {
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            "المراجع",
+            style: TextStyle(
+                color: CupertinoColors.black, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: Theme.of(context).canvasColor,
+          elevation: 1,
+        ),
+        body: ListView(
+          children: [
+            buildAutoSizeText(Dis().res1, 16.00),
+            _textButton('https://www.ncbi.nlm.nih.gov/books/NBK541126/'),
+            buildAutoSizeText(Dis().res2, 16.00),
+            _textButton('https://onlinelibrary.wiley.com/doi/abs/10.1111/jcpe.12939'),
+            buildAutoSizeText(Dis().res3, 16.00),
+            _textButton('https://journals.sagepub.com/doi/abs/10.1177/2380084420948779'),
+            buildAutoSizeText(Dis().res4, 16.00),
+            _textButton('https://dental-almanac.org/index.php/journal/article/view/476'),
+            buildAutoSizeText(Dis().res5, 16.00),
+            _textButton('https://europepmc.org/article/nbk/nbk554590'),
+            buildAutoSizeText(Dis().res6, 16.00),
+            _textButton('https://books.google.com/books?hl=ar&lr=&id=Skr9DwAAQBAJ&oi=fnd&pg=PA55&dq=ALShami,+A.,+ALHarthi,+S.,+Binshabaib,+M.,+%26+Wahi,+M.+(2019).+Tooth+Morphology+Overview.+In+Human+Teeth-Key+Skills+and+Clinical+Illustrations.+IntechOpen&ots=XqwJtLRKar&sig=Rx9vYqbhq4BvMk8LGPHsyWfu0_k'),
+            buildAutoSizeText(Dis().res7, 16.00),
+            _textButton('https://www.jmidlifehealth.org/article.asp?issn=0976-7800;year=2021;volume=12;issue=4;spage=263;epage=266;aulast=Boyapati'),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Directionality bottomSheet5() {
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            "المراجع",
+            style: TextStyle(
+                color: CupertinoColors.black, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: Theme.of(context).canvasColor,
+          elevation: 1,
+        ),
+        body: ListView(
+          children: [
+            buildAutoSizeText(Habit().res, 16.00),
+            _textButton('https://www.sciencedirect.com/science/article/pii/S0300571204001770?casa_token=_J-CMX2fZi0AAAAA:eVtRsed0M5spWOrv1Nv_QMlyB82lXjahebgqWt0UE-UP-G_DUgz_54k-MQi1dp6XjUX0vdiH'),
+            _textButton(
+                'https://scholar.google.com/scholar?hl=ar&as_sdt=0%2C5&q=Relationship+between+snacks+and+tooth+decay&btnG=#d=gs_qabs&u=%23p%3DE_9FrxX7dLAJ'),
+          ],
+        ),
+      ),
+    );
+  }
+
 }

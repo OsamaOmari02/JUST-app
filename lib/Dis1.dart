@@ -1,18 +1,21 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:medical_info_just/drawer.dart';
 import 'package:medical_info_just/provider.dart';
 import 'package:provider/provider.dart';
 
 import 'info.dart';
 
-class Habit1 extends StatefulWidget {
-  const Habit1({Key? key}) : super(key: key);
+class Dis1 extends StatefulWidget {
+  const Dis1({Key? key}) : super(key: key);
 
   @override
-  _Habit1State createState() => _Habit1State();
+  _Dis1State createState() => _Dis1State();
 }
 
-class _Habit1State extends State<Habit1> {
+class _Dis1State extends State<Dis1> {
   double? width;
   double? height;
 

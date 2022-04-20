@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:medical_info_just/Habit2.dart';
+import 'package:medical_info_just/Habit3.dart';
+import 'package:medical_info_just/Habit4.dart';
+import 'package:medical_info_just/Habit6.dart';
 import 'package:medical_info_just/Treat2.dart';
 import 'package:medical_info_just/nextPage.dart';
 import 'package:medical_info_just/provider.dart';
 import 'package:medical_info_just/settings.dart';
 import 'package:provider/provider.dart';
 
-import 'Habit.dart';
+import 'Dis1.dart';
+import 'Habit1.dart';
+import 'Habit5.dart';
 import 'Mouth1.dart';
 import 'Mouth2.dart';
 import 'Mouth3.dart';
@@ -64,8 +70,12 @@ class MyApp extends StatelessWidget {
         'TreatPage2': (context) => const Treat2(),
         'TreatPage3': (context) => const Treat3(),
         'HabitPage1': (context) => const Habit1(),
-        // 'HabitPage1': (context) => const Habit1(),
-        // 'HabitPage1': (context) => const Habit1(),
+        'HabitPage2': (context) => const Habit2(),
+        'HabitPage3': (context) => const Habit3(),
+        'HabitPage4': (context) => const Habit4(),
+        'HabitPage5': (context) => const Habit5(),
+        'HabitPage6': (context) => const Habit6(),
+        // 'DisPage1': (context) => const Dis1(),
 
       },
     );
@@ -174,8 +184,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       'NextPage'),
                   funImage("العلاج الوقائي",
                       'images/العلاج الوقائي/العلاج الوقائي.jpg', 'NextPage'),
-                  funImage("العادات الفموية السيئة",'images/العلاج الوقائي/العلاج الوقائي.jpg','NextPage'),
-                  // funImage("title"),
+                  funImage("العادات الفموية السيئة",'images/Habit/1.png','NextPage'),
+                  funImage("أمراض اللثة",'images/Habit/1.png','NextPage'),
                 ],
               ),
             ),
