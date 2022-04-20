@@ -37,39 +37,41 @@ class _Nice3State extends State<Nice3> {
               centerTitle: true,
               title: const Text("القشور الخزفية والزيريكون"),
             ),
-            body: ListView(
-              padding: const EdgeInsets.fromLTRB(2, 15, 2, 0),
-              children: [
-                SizedBox(height: getHeight() * 0.015),
-                provider.buildAutoSizeText(Nice().s16, 17.00),
-                provider.buildAutoSizeText("• المفهوم :", 18.00, Colors.green, FontWeight.bold),
-                provider.buildAutoSizeText(Nice().s17, 17.00),
-                provider.buildAutoSizeText(Nice().s18, 17.00),
-                Row(
-                  children: [
-                    provider.buildAutoSizeText("• الفرق بينهما :", 18.00, Colors.green,
-                        FontWeight.bold),
-                    Expanded(
-                      child: Align(
-                        alignment: Alignment.bottomLeft,
-                          child: Container(
-                              child:
-                                  Image.asset('images/طب الاسنان التجميلي/8.png'),
-                              height: getHeight() * 0.3)),
-                    ),
-                  ],
-                ),
-                provider.buildAutoSizeText(Nice().s19, 17.00),
-                provider.buildAutoSizeText("• عيوب كل منهما :", 18.00, Colors.red,FontWeight.bold),
-                provider.buildAutoSizeText(Nice().s20, 17.00),
-                Image.asset('images/طب الاسنان التجميلي/9.png'),
-                provider.buildAutoSizeText("• القشور الخزفية ورائحة الفم :", 18.00,Colors.red,FontWeight.bold),
-                provider.buildAutoSizeText(Nice().s21, 17.00),
-                Container(child: Image.asset('images/طب الاسنان التجميلي/10.png'),height: getHeight()*0.3),
-                provider.buildAutoSizeText("• العناية بهما :", 18.00,Colors.green,FontWeight.bold),
-                provider.buildAutoSizeText(Nice().s22, 17.00),
-                Image.asset('images/طب الاسنان التجميلي/11.png'),
-              ],
+            body: Scrollbar(
+              child: ListView(
+                padding: const EdgeInsets.fromLTRB(2, 15, 2, 0),
+                children: [
+                  SizedBox(height: getHeight() * 0.015),
+                  provider.buildAutoSizeText(Nice().s16, 17.00),
+                  provider.buildAutoSizeText("• المفهوم :", 18.00, Colors.green, FontWeight.bold),
+                  provider.buildAutoSizeText(Nice().s17, 17.00),
+                  provider.buildAutoSizeText(Nice().s18, 17.00),
+                  Row(
+                    children: [
+                      provider.buildAutoSizeText("• الفرق بينهما :", 18.00, Colors.green,
+                          FontWeight.bold),
+                      Expanded(
+                        child: Align(
+                          alignment: Alignment.bottomLeft,
+                            child: Container(
+                                child:
+                                    Image.asset('images/طب الاسنان التجميلي/8.png'),
+                                height: getHeight() * 0.3)),
+                      ),
+                    ],
+                  ),
+                  provider.buildAutoSizeText(Nice().s19, 17.00),
+                  provider.buildAutoSizeText("• عيوب كل منهما :", 18.00, Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText(Nice().s20, 17.00),
+                  Image.asset('images/طب الاسنان التجميلي/9.png'),
+                  provider.buildAutoSizeText("• القشور الخزفية ورائحة الفم :", 18.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText(Nice().s21, 17.00),
+                  Container(child: Image.asset('images/طب الاسنان التجميلي/10.png'),height: getHeight()*0.3),
+                  provider.buildAutoSizeText("• العناية بهما :", 18.00,Colors.green,FontWeight.bold),
+                  provider.buildAutoSizeText(Nice().s22, 17.00),
+                  Image.asset('images/طب الاسنان التجميلي/11.png'),
+                ],
+              ),
             ),
           ),
         ),

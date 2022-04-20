@@ -59,13 +59,28 @@ class _NextPageState extends State<NextPage> {
                               buildAutoSizeText(Treat().s1, 16.00),
                               _listTile("المادة السادة الوقائية", 'TreatPage1'),
                               _listTile("الفلورايد", 'TreatPage2'),
-                              _listTile("تفريش الأسنان", 'TreatPage3'),
-                              _listTile("خيط الأسنان", 'TreatPage4'),
+                              _listTile("الزيارة المنتظمة لطبيب الاسنان",
+                                  'TreatPage3'),
                             ],
                           )
-                        : ListView(
-                            children: [],
-                          ),
+                        : Provider.of<MyProvider>(context, listen: false).idx ==
+                                'العلاج الوقائي'
+                            ? ListView(
+                                padding:
+                                    const EdgeInsets.fromLTRB(10, 15, 10, 0),
+                                children: [
+                                  buildAutoSizeText(Treat().s1, 16.00),
+                                  _listTile(
+                                      "العادة الفموية السيئة", 'TreatPage1'),
+                                  _listTile("الفلورايد", 'TreatPage2'),
+                                  _listTile("الزيارة المنتظمة لطبيب الاسنان",
+                                      'TreatPage3'),
+                                  _listTile("خيط الأسنان", 'TreatPage4'),
+                                ],
+                              )
+                            : ListView(
+                                children: [],
+                              ),
             floatingActionButton: _floatingFun(),
           ),
         ),
@@ -107,6 +122,7 @@ class _NextPageState extends State<NextPage> {
   TextButton _textButton(res) {
     return TextButton(
         child: AutoSizeText(res,
+            textAlign: TextAlign.center,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 decoration: TextDecoration.underline,
@@ -124,8 +140,7 @@ class _NextPageState extends State<NextPage> {
               else if (Provider.of<MyProvider>(context).idx ==
                   'طب الأسنان التجميلي')
                 return bottomSheet2();
-              else if (Provider.of<MyProvider>(context).idx ==
-                  'العلاج الوقائي')
+              else if (Provider.of<MyProvider>(context).idx == 'العلاج الوقائي')
                 return bottomSheet3();
               return bottomSheet1();
             }),
@@ -240,8 +255,10 @@ class _NextPageState extends State<NextPage> {
         body: ListView(
           children: [
             buildAutoSizeText(Nice().s30, 16.00),
-            _textButton('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3713859/.'),
-            _textButton('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6312728/.'),
+            _textButton(
+                'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3713859/.'),
+            _textButton(
+                'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6312728/.'),
           ],
         ),
       ),
@@ -266,7 +283,10 @@ class _NextPageState extends State<NextPage> {
           children: [
             buildAutoSizeText(Treat().res, 16.00),
             _textButton('https://teethtalkgirl.com/videos/dental-sealants'),
-            _textButton('https://www.oceansightdental.com/preventive-dentistry-san-clemente/dental-sealants-san-clemente/'),
+            _textButton(
+                'https://www.oceansightdental.com/preventive-dentistry-san-clemente/dental-sealants-san-clemente/'),
+            _textButton(
+                'http://www.newhopeorthodontics.com/treatment/cosmetic-dentistry/tooth-wear'),
           ],
         ),
       ),

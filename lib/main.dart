@@ -6,6 +6,7 @@ import 'package:medical_info_just/provider.dart';
 import 'package:medical_info_just/settings.dart';
 import 'package:provider/provider.dart';
 
+import 'Habit.dart';
 import 'Mouth1.dart';
 import 'Mouth2.dart';
 import 'Mouth3.dart';
@@ -15,6 +16,7 @@ import 'Nice2.dart';
 import 'Nice3.dart';
 import 'Nice4.dart';
 import 'Treat1.dart';
+import 'Treat3.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,8 +62,10 @@ class MyApp extends StatelessWidget {
         'NicePage4': (context) => const Nice4(),
         'TreatPage1': (context) => const Treat1(),
         'TreatPage2': (context) => const Treat2(),
-        // 'TreatPage3': (context) => const Treat3(),
-        // 'TreatPage4': (context) => const Treat4(),
+        'TreatPage3': (context) => const Treat3(),
+        'HabitPage1': (context) => const Habit1(),
+        // 'HabitPage1': (context) => const Habit1(),
+        // 'HabitPage1': (context) => const Habit1(),
 
       },
     );
@@ -170,7 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       'NextPage'),
                   funImage("العلاج الوقائي",
                       'images/العلاج الوقائي/العلاج الوقائي.jpg', 'NextPage'),
-                  // funImage("title",'images/العلاج الوقائي/العلاج الوقائي.jpg'),
+                  funImage("العادات الفموية السيئة",'images/العلاج الوقائي/العلاج الوقائي.jpg','NextPage'),
                   // funImage("title"),
                 ],
               ),
