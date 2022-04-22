@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
         'HabitPage4': (context) => const Habit4(),
         'HabitPage5': (context) => const Habit5(),
         'HabitPage6': (context) => const Habit6(),
-        // 'DisPage1': (context) => const Dis1(),
+        'DisPage1': (context) => const Dis1(),
 
       },
     );

@@ -84,7 +84,7 @@ flutter:
      - images/صحة الفم/
      - images/طب الاسنان التجميلي/
      - images/Habit/
-
+     - images/Dis/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

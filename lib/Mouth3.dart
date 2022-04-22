@@ -41,9 +41,9 @@ class _Mouth3State extends State<Mouth3> {
                 padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                 children: [
                   SizedBox(height: getHeight() * 0.01),
-                  Center(child: provider.buildAutoSizeText("اختيار فرشاة الأسنان المناسبة", 18.00,Colors.green,FontWeight.bold)),
+                  provider.buildAutoSizeText("● اختيار فرشاة الأسنان المناسبة :", 18.00,Colors.green,FontWeight.bold),
                   provider.buildAutoSizeText(mouth().s16, 17.00),
-                  provider.buildAutoSizeText("نأتي الآن إلى الجزء الأهم وهوا كيف نفرش أسناننا..", 18.00,Colors.green,FontWeight.bold),
+                  provider.buildAutoSizeText("نأتي الآن إلى الجزء الأهم وهوا كيف نفرش أسناننا.", 18.00,Colors.green,FontWeight.bold),
                   Center(child: provider.buildAutoSizeText("Modified Bass Brushing Technique", 18.00,Colors.red,FontWeight.bold)),
                   provider.buildAutoSizeText(mouth().s17,17.00,Colors.orange,FontWeight.w600),
                   provider.buildAutoSizeText(mouth().s18, 17.00),

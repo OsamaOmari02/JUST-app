@@ -34,29 +34,26 @@ class _Dis1State extends State<Dis1> {
           child: Scaffold(
             appBar: AppBar(
               centerTitle: true,
-              title: const Text("سرطان الفم"),
+              title: const Text("أجزاء السن"),
             ),
             body: Scrollbar(
               child: ListView(
                 padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                 children: [
                   SizedBox(height: getHeight() * 0.015),
-                  provider.buildAutoSizeText("سرطان الفم:", 18.00,Colors.red,FontWeight.bold),
-                  provider.buildAutoSizeText(mouth().s1, 17.00),
-                  provider.buildAutoSizeText(mouth().s2, 17.00),
-                  provider.buildAutoSizeText(mouth().s3, 17.00,Colors.deepOrangeAccent),
+                  provider.buildAutoSizeText("● أجزاء السن :", 18.00,Colors.lightGreen,FontWeight.bold),
+                  provider.buildAutoSizeText("• كل سن يتكون من :", 17.00),
+                  provider.buildAutoSizeText(Dis().s1, 17.00),
+                  provider.buildAutoSizeText(Dis().s2, 17.00),
+                  Image.asset('images/Dis/1.png'),
                   provider.buildAutoSizeText(
-                      "الأعراض :", 18.00, Colors.red, FontWeight.bold),
-                  provider.buildAutoSizeText(mouth().s4, 17.00),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Image.asset('images/صحة الفم/1.png'),
-                  ),
-                  provider.buildAutoSizeText("عوامل خطر الإصابة :", 18.00,Colors.red,FontWeight.bold),
-                  provider.buildAutoSizeText(mouth().s5, 17.00),
-                  provider.buildAutoSizeText(mouth().s6, 17.00),
-                  provider.buildAutoSizeText("3- ضعف جهاز المناعة .", 17.00),
-                  provider.buildAutoSizeText("4- تعرض الشفاه الى أشعة الشمس لفترة طويلة .", 17.00),
+                      "● يتكون السن من أربع طبقات ثلاث منها صلبة وواحدة غير صلبة :", 18.00, Colors.lightGreen, FontWeight.bold),
+                  provider.buildAutoSizeText("• أولا :\nثلاث طبقات صلبة :", 17.00),
+                  provider.buildAutoSizeText(Dis().s5, 17.00),
+                  // provider.buildAutoSizeText("عوامل خطر الإصابة :", 18.00,Colors.red,FontWeight.bold),
+                  // provider.buildAutoSizeText(Dis().s6, 17.00),
+                  // provider.buildAutoSizeText("3- ضعف جهاز المناعة .", 17.00),
+                  // provider.buildAutoSizeText("4- تعرض الشفاه الى أشعة الشمس لفترة طويلة .", 17.00),
                   SizedBox(height: getHeight() * 0.05),
                 ],
               ),

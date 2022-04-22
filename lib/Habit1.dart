@@ -35,31 +35,31 @@ class _Habit1State extends State<Habit1> {
             ),
             body: Scrollbar(
               child: ListView(
-                padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
-                children: [
-                  SizedBox(height: getHeight() * 0.015),
-                  provider.buildAutoSizeText(
-                      "● المفهوم :", 18.00, Colors.lightGreen, FontWeight.bold),
-                  provider.buildAutoSizeText(Habit().s2, 17.00),
-                  provider.buildAutoSizeText("● اثر استخدام الاسنان كاداة :", 18.00,
-                      Colors.lightGreen, FontWeight.bold),
-                  provider.buildAutoSizeText(Habit().s3, 17.00),
-                  provider.buildAutoSizeText(Habit().s4, 17.00),
-                  provider.buildAutoSizeText(Habit().s5, 17.00),
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Image.asset('images/Habit/2.png'),
-                  ),
-                  provider.buildAutoSizeText("● العلاج :", 18.00, Colors.lightGreen, FontWeight.bold),
-                  provider.buildAutoSizeText("يجب ترك هذه العادة لما لها من اثر سلبي على الاسنان.", 17.00),
-                  SizedBox(height: getHeight() * 0.03),
-                ],
+                  padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
+                  children: [
+                    SizedBox(height: getHeight() * 0.015),
+                    provider.buildAutoSizeText(
+                        "● المفهوم :", 18.00, Colors.lightGreen, FontWeight.bold),
+                    provider.buildAutoSizeText(Habit().s2, 17.00),
+                    provider.buildAutoSizeText("● اثر استخدام الاسنان كاداة :", 18.00,
+                        Colors.lightGreen, FontWeight.bold),
+                    provider.buildAutoSizeText(Habit().s3, 17.00),
+                    provider.buildAutoSizeText(Habit().s4, 17.00),
+                    provider.buildAutoSizeText(Habit().s5, 17.00),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Image.asset('images/Habit/2.png'),
+                    ),
+                    provider.buildAutoSizeText("● العلاج :", 18.00, Colors.lightGreen, FontWeight.bold),
+                    provider.buildAutoSizeText("يجب ترك هذه العادة لما لها من اثر سلبي على الاسنان.", 17.00),
+                    SizedBox(height: getHeight() * 0.03),
+                  ],
+                ),
               ),
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 
 }

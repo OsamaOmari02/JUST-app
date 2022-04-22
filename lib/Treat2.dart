@@ -37,7 +37,7 @@ class _Treat2State extends State<Treat2> {
             ),
             body: Scrollbar(
               child: ListView(
-                padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 10),
+                padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                 children: [
                   SizedBox(height: getHeight() * 0.01),
                   provider.buildAutoSizeText(
@@ -182,7 +182,7 @@ class _Treat2State extends State<Treat2> {
                     child: Image.asset('images/العلاج الوقائي/7.jpg'),
                   ),
                   provider.buildAutoSizeText(Treat().s33, 17.00),
-
+                  SizedBox(height: getHeight() * 0.02),
                 ],
               ),
             ),

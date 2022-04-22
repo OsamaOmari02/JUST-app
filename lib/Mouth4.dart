@@ -43,13 +43,15 @@ class _Mouth4State extends State<Mouth4> {
                 padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                 children: [
                   SizedBox(height: getHeight() * 0.015),
+                  provider.buildAutoSizeText("● المفهوم :",
+                      18.00, Colors.green, FontWeight.bold),
                   provider.buildAutoSizeText(mouth().s22, 18.00),
-                  provider.buildAutoSizeText("انواع خيط الأسنان :", 18.00,
+                  provider.buildAutoSizeText("● انواع خيط الأسنان :", 18.00,
                       Colors.green, FontWeight.bold),
                   provider.buildAutoSizeText(
                       "المشع وغير المشع، ذو خيط احادي و متعدد الخيوط.", 17.00),
                   Image.asset('images/صحة الفم/11.png'),
-                  provider.buildAutoSizeText("فوائد استخدام خيط الأسنان :",
+                  provider.buildAutoSizeText("● فوائد استخدام خيط الأسنان :",
                       18.00, Colors.green, FontWeight.bold),
                   Row(
                     children: [
@@ -83,7 +85,7 @@ class _Mouth4State extends State<Mouth4> {
                     ],
                   ),
                   provider.buildAutoSizeText(mouth().s24, 17.00),
-                  provider.buildAutoSizeText("أضرار خيط الأسنان :", 18.00,
+                  provider.buildAutoSizeText("● أضرار خيط الأسنان :", 18.00,
                       Colors.red, FontWeight.bold),
                   provider.buildAutoSizeText(mouth().s25, 17.00),
                   SizedBox(height: getHeight() * 0.05),

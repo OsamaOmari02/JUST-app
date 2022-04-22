@@ -39,21 +39,21 @@ class _Nice4State extends State<Nice4> {
             ),
             body: Scrollbar(
               child: ListView(
-                padding: const EdgeInsets.symmetric(horizontal: 5),
+                padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                 children: [
                   SizedBox(height: getHeight() * 0.03),
-                  provider.buildAutoSizeText("• المفهوم :", 18.00, Colors.green, FontWeight.bold),
+                  provider.buildAutoSizeText("● المفهوم :", 18.00, Colors.green, FontWeight.bold),
                   provider.buildAutoSizeText(Nice().s23, 17.00),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Image.asset('images/طب الاسنان التجميلي/13.png'),
                   ),
-                  provider.buildAutoSizeText("• مميزات قص وتجميل اللثة :", 18.00, Colors.green,FontWeight.bold),
+                  provider.buildAutoSizeText("● مميزات قص وتجميل اللثة :", 18.00, Colors.green,FontWeight.bold),
                   provider.buildAutoSizeText(Nice().s24, 17.00),
                   Image.asset('images/طب الاسنان التجميلي/12.png'),
-                  provider.buildAutoSizeText("• عيوب و مخاطر قص اللثة :", 18.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText("● عيوب و مخاطر قص اللثة :", 18.00,Colors.red,FontWeight.bold),
                   provider.buildAutoSizeText(Nice().s25, 17.00),
-                  provider.buildAutoSizeText("• تعليمات ما بعد قص اللثة :", 18.00,Colors.green,FontWeight.bold),
+                  provider.buildAutoSizeText("● تعليمات ما بعد قص اللثة :", 18.00,Colors.green,FontWeight.bold),
                   provider.buildAutoSizeText(Nice().s26, 17.00),
                   provider.buildAutoSizeText("• المحافظة على نظافة الفم حيث يفضل استخدام المحاليل الملحية لتنظيف الفم ٣ مرات يوميا كذلك تفريش الأسنان مرتين يوميا مع الحذر عند الاقتراب من مكان إجراء العملية.", 17.00),
                   Padding(

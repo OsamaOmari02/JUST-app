@@ -41,18 +41,18 @@ class _Mouth1State extends State<Mouth1> {
                 padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                 children: [
                   SizedBox(height: getHeight() * 0.015),
-                  provider.buildAutoSizeText("سرطان الفم:", 18.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText("● سرطان الفم :", 18.00,Colors.red,FontWeight.bold),
                   provider.buildAutoSizeText(mouth().s1, 17.00),
                   provider.buildAutoSizeText(mouth().s2, 17.00),
                   provider.buildAutoSizeText(mouth().s3, 17.00,Colors.deepOrangeAccent),
                   provider.buildAutoSizeText(
-                      "الأعراض :", 18.00, Colors.red, FontWeight.bold),
+                      "● الأعراض :", 18.00, Colors.red, FontWeight.bold),
                   provider.buildAutoSizeText(mouth().s4, 17.00),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Image.asset('images/صحة الفم/1.png'),
                   ),
-                  provider.buildAutoSizeText("عوامل خطر الإصابة :", 18.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText("● عوامل خطر الإصابة :", 18.00,Colors.red,FontWeight.bold),
                   provider.buildAutoSizeText(mouth().s5, 17.00),
                   provider.buildAutoSizeText(mouth().s6, 17.00),
                   provider.buildAutoSizeText("3- ضعف جهاز المناعة .", 17.00),

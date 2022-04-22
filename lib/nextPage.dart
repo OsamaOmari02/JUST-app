@@ -86,14 +86,10 @@ class _NextPageState extends State<NextPage> {
                                     padding: const EdgeInsets.fromLTRB(
                                         10, 15, 10, 0),
                                     children: [
-                                      // buildAutoSizeText(Dis().s1, 16.00),
-                                      _listTile("",
-                                          'DisPage1'),
-                                      _listTile("", 'DisPage2'),
-                                      _listTile(
-                                          "",
-                                          'DisPage3'),
-                                      _listTile("", 'DisPage4'),
+                                      const SizedBox(height: 20),
+                                      _listTile("أجزاء السن",'DisPage1'),
+                                      _listTile("",'DisPage2'),
+                                      _listTile("",'DisPage3'),
                                     ],
                                   )
                                 : ListView(
@@ -116,7 +112,7 @@ class _NextPageState extends State<NextPage> {
         ),
         trailing: const Icon(
           Icons.arrow_forward,
-          color: Colors.green,
+          color: Colors.black,
         ),
         onTap: () => Navigator.of(context).pushNamed(route),
       ),
