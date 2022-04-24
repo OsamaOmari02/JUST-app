@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:medical_info_just/Dis4.dart';
 import 'package:medical_info_just/Habit2.dart';
 import 'package:medical_info_just/Habit3.dart';
 import 'package:medical_info_just/Habit4.dart';
@@ -11,6 +12,8 @@ import 'package:medical_info_just/settings.dart';
 import 'package:provider/provider.dart';
 
 import 'Dis1.dart';
+import 'Dis2.dart';
+import 'Dis3.dart';
 import 'Habit1.dart';
 import 'Habit5.dart';
 import 'Mouth1.dart';
@@ -49,14 +52,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       home: const MyHomePage(),
-      themeMode: Provider.of<MyProvider>(context).isDark
-          ? ThemeMode.dark
-          : ThemeMode.light,
-      darkTheme:
-          ThemeData(brightness: Brightness.dark, accentColor: Colors.white),
+      themeMode: ThemeMode.light,
       routes: {
         'MyHomePage': (context) => const MyHomePage(),
-        'settings': (context) => const Settings(),
+        // 'settings': (context) => const Settings(),
         'NextPage': (context) => const NextPage(),
         'MouthPage1': (context) => const Mouth1(),
         'MouthPage2': (context) => const Mouth2(),
@@ -76,6 +75,9 @@ class MyApp extends StatelessWidget {
         'HabitPage5': (context) => const Habit5(),
         'HabitPage6': (context) => const Habit6(),
         'DisPage1': (context) => const Dis1(),
+        'DisPage2': (context) => const Dis2(),
+        'DisPage3': (context) => const Dis3(),
+        'DisPage4': (context) => const Dis4(),
 
       },
     );
@@ -139,19 +141,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       subtitle: Text(title,
           style: TextStyle(
-              color: Provider.of<MyProvider>(context).isDark
-                  ? Colors.white
-                  : Colors.black,
+              color: Colors.black,
               fontSize: getWidth() * 0.042,
               fontWeight: FontWeight.bold),
           textAlign: TextAlign.center),
     );
-  }
-
-  @override
-  void initState() {
-    Provider.of<MyProvider>(context, listen: false).getDarkMode();
-    super.initState();
   }
 
   @override

@@ -88,8 +88,9 @@ class _NextPageState extends State<NextPage> {
                                     children: [
                                       const SizedBox(height: 20),
                                       _listTile("أجزاء السن",'DisPage1'),
-                                      _listTile("",'DisPage2'),
-                                      _listTile("",'DisPage3'),
+                                      _listTile("الأنسجة الداعمة للأسنان",'DisPage2'),
+                                      _listTile("أمراض اللثة",'DisPage3'),
+                                      _listTile("طرق الوقاية والعلاج",'DisPage4'),
                                     ],
                                   )
                                 : ListView(

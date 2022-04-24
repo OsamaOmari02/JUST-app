@@ -13,20 +13,20 @@ class MyProvider with ChangeNotifier {
     throw "";
   }
 //---------------------------Dark Mode-----------------------------
-  bool isDark = false;
-
-  getDarkMode() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    isDark = pref.getBool('darkMode') ?? false;
-    notifyListeners();
-  }
-
-  setDarkMode(value) async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    pref.setBool('darkMode', value);
-    isDark = value;
-    notifyListeners();
-  }
+//   bool isDark = false;
+//
+//   getDarkMode() async {
+//     SharedPreferences pref = await SharedPreferences.getInstance();
+//     isDark = pref.getBool('darkMode') ?? false;
+//     notifyListeners();
+//   }
+//
+//   setDarkMode(value) async {
+//     SharedPreferences pref = await SharedPreferences.getInstance();
+//     pref.setBool('darkMode', value);
+//     isDark = value;
+//     notifyListeners();
+//   }
 //---------------------------Widgets -----------------------------
 
   String idx="";
