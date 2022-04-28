@@ -49,12 +49,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-flutter_native_splash:
-  color: "#ffffff"
-  image: images/Delivery_time.png
-  android_gravity: center
-  android: true
-  ios: true
+#flutter_native_splash:
+#  color: "#ffffff"
+#  image:
+#  android_gravity: center
+#  android: true
+#  ios: true
 
 flutter_icons:
   android: true
@@ -85,6 +85,7 @@ flutter:
      - images/طب الاسنان التجميلي/
      - images/Habit/
      - images/Dis/
+     - images/Teeth/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

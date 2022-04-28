@@ -5,6 +5,8 @@ import 'package:medical_info_just/Habit2.dart';
 import 'package:medical_info_just/Habit3.dart';
 import 'package:medical_info_just/Habit4.dart';
 import 'package:medical_info_just/Habit6.dart';
+import 'package:medical_info_just/Teeth2.dart';
+import 'package:medical_info_just/Teeth3.dart';
 import 'package:medical_info_just/Treat2.dart';
 import 'package:medical_info_just/nextPage.dart';
 import 'package:medical_info_just/provider.dart';
@@ -24,6 +26,7 @@ import 'Nice1.dart';
 import 'Nice2.dart';
 import 'Nice3.dart';
 import 'Nice4.dart';
+import 'Teeth1.dart';
 import 'Treat1.dart';
 import 'Treat3.dart';
 
@@ -78,7 +81,9 @@ class MyApp extends StatelessWidget {
         'DisPage2': (context) => const Dis2(),
         'DisPage3': (context) => const Dis3(),
         'DisPage4': (context) => const Dis4(),
-
+        'TeethPage1' : (context) => const Teeth1(),
+        'TeethPage2' : (context) => const Teeth2(),
+        'TeethPage3' : (context) => const Teeth3(),
       },
     );
   }
@@ -180,6 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       'images/العلاج الوقائي/العلاج الوقائي.jpg', 'NextPage'),
                   funImage("العادات الفموية السيئة",'images/Habit/1.png','NextPage'),
                   funImage("أمراض اللثة",'images/Habit/1.png','NextPage'),
+                  funImage("تسوس الأسنان",'images/Teeth/1.jpg','NextPage'),
                 ],
               ),
             ),

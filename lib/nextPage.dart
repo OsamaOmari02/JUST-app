@@ -71,10 +71,11 @@ class _NextPageState extends State<NextPage> {
                                 children: [
                                   buildAutoSizeText(Habit().s1, 16.00),
                                   _listTile(
-                                      "استخدام الأسنان كأداة",'HabitPage1'),
-                                  _listTile("قضم الأظافر",'HabitPage2'),
-                                  _listTile("صرير الأسنان",'HabitPage3'),
-                                  _listTile("أخطاء تنظيف الأسنان", 'HabitPage4'),
+                                      "استخدام الأسنان كأداة", 'HabitPage1'),
+                                  _listTile("قضم الأظافر", 'HabitPage2'),
+                                  _listTile("صرير الأسنان", 'HabitPage3'),
+                                  _listTile(
+                                      "أخطاء تنظيف الأسنان", 'HabitPage4'),
                                   _listTile("قضم قطع الثلج", 'HabitPage5'),
                                   _listTile("الوجبات الخفيفة", 'HabitPage6'),
                                 ],
@@ -87,15 +88,31 @@ class _NextPageState extends State<NextPage> {
                                         10, 15, 10, 0),
                                     children: [
                                       const SizedBox(height: 20),
-                                      _listTile("أجزاء السن",'DisPage1'),
-                                      _listTile("الأنسجة الداعمة للأسنان",'DisPage2'),
-                                      _listTile("أمراض اللثة",'DisPage3'),
-                                      _listTile("طرق الوقاية والعلاج",'DisPage4'),
+                                      _listTile("أجزاء السن", 'DisPage1'),
+                                      _listTile("الأنسجة الداعمة للأسنان",
+                                          'DisPage2'),
+                                      _listTile("أمراض اللثة", 'DisPage3'),
+                                      _listTile(
+                                          "طرق الوقاية والعلاج", 'DisPage4'),
                                     ],
                                   )
-                                : ListView(
-                                    children: [],
-                                  ),
+                                : Provider.of<MyProvider>(context,
+                                                listen: false)
+                                            .idx ==
+                                        'تسوس الأسنان'
+                                    ? ListView(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            10, 15, 10, 0),
+                                        children: [
+                                          buildAutoSizeText(Teeth().s1, 16.00),
+                                          _listTile("أنواع ومراحل تسوس الأسنان", 'TeethPage1'),
+                                          _listTile("الأعراض والمضاعفات", 'TeethPage2'),
+                                          _listTile("طرق الوقاية والعلاج", 'TeethPage3'),
+                                        ],
+                                      )
+                                    : ListView(
+                                        children: [],
+                                      ),
             floatingActionButton: _floatingFun(),
           ),
         ),
@@ -159,8 +176,11 @@ class _NextPageState extends State<NextPage> {
                 return bottomSheet3();
               else if (Provider.of<MyProvider>(context).idx == 'أمراض اللثة')
                 return bottomSheet4();
-              else if (Provider.of<MyProvider>(context).idx == 'العادات الفموية السيئة')
+              else if (Provider.of<MyProvider>(context).idx ==
+                  'العادات الفموية السيئة')
                 return bottomSheet5();
+              else if (Provider.of<MyProvider>(context).idx == 'تسوس الأسنان')
+                return bottomSheet6();
               return bottomSheet1();
             }),
         child: const Text('المراجع'));
@@ -331,17 +351,22 @@ class _NextPageState extends State<NextPage> {
             buildAutoSizeText(Dis().res1, 16.00),
             _textButton('https://www.ncbi.nlm.nih.gov/books/NBK541126/'),
             buildAutoSizeText(Dis().res2, 16.00),
-            _textButton('https://onlinelibrary.wiley.com/doi/abs/10.1111/jcpe.12939'),
+            _textButton(
+                'https://onlinelibrary.wiley.com/doi/abs/10.1111/jcpe.12939'),
             buildAutoSizeText(Dis().res3, 16.00),
-            _textButton('https://journals.sagepub.com/doi/abs/10.1177/2380084420948779'),
+            _textButton(
+                'https://journals.sagepub.com/doi/abs/10.1177/2380084420948779'),
             buildAutoSizeText(Dis().res4, 16.00),
-            _textButton('https://dental-almanac.org/index.php/journal/article/view/476'),
+            _textButton(
+                'https://dental-almanac.org/index.php/journal/article/view/476'),
             buildAutoSizeText(Dis().res5, 16.00),
             _textButton('https://europepmc.org/article/nbk/nbk554590'),
             buildAutoSizeText(Dis().res6, 16.00),
-            _textButton('https://books.google.com/books?hl=ar&lr=&id=Skr9DwAAQBAJ&oi=fnd&pg=PA55&dq=ALShami,+A.,+ALHarthi,+S.,+Binshabaib,+M.,+%26+Wahi,+M.+(2019).+Tooth+Morphology+Overview.+In+Human+Teeth-Key+Skills+and+Clinical+Illustrations.+IntechOpen&ots=XqwJtLRKar&sig=Rx9vYqbhq4BvMk8LGPHsyWfu0_k'),
+            _textButton(
+                'https://books.google.com/books?hl=ar&lr=&id=Skr9DwAAQBAJ&oi=fnd&pg=PA55&dq=ALShami,+A.,+ALHarthi,+S.,+Binshabaib,+M.,+%26+Wahi,+M.+(2019).+Tooth+Morphology+Overview.+In+Human+Teeth-Key+Skills+and+Clinical+Illustrations.+IntechOpen&ots=XqwJtLRKar&sig=Rx9vYqbhq4BvMk8LGPHsyWfu0_k'),
             buildAutoSizeText(Dis().res7, 16.00),
-            _textButton('https://www.jmidlifehealth.org/article.asp?issn=0976-7800;year=2021;volume=12;issue=4;spage=263;epage=266;aulast=Boyapati'),
+            _textButton(
+                'https://www.jmidlifehealth.org/article.asp?issn=0976-7800;year=2021;volume=12;issue=4;spage=263;epage=266;aulast=Boyapati'),
           ],
         ),
       ),
@@ -365,7 +390,8 @@ class _NextPageState extends State<NextPage> {
         body: ListView(
           children: [
             buildAutoSizeText(Habit().res, 16.00),
-            _textButton('https://www.sciencedirect.com/science/article/pii/S0300571204001770?casa_token=_J-CMX2fZi0AAAAA:eVtRsed0M5spWOrv1Nv_QMlyB82lXjahebgqWt0UE-UP-G_DUgz_54k-MQi1dp6XjUX0vdiH'),
+            _textButton(
+                'https://www.sciencedirect.com/science/article/pii/S0300571204001770?casa_token=_J-CMX2fZi0AAAAA:eVtRsed0M5spWOrv1Nv_QMlyB82lXjahebgqWt0UE-UP-G_DUgz_54k-MQi1dp6XjUX0vdiH'),
             _textButton(
                 'https://scholar.google.com/scholar?hl=ar&as_sdt=0%2C5&q=Relationship+between+snacks+and+tooth+decay&btnG=#d=gs_qabs&u=%23p%3DE_9FrxX7dLAJ'),
           ],
@@ -374,4 +400,36 @@ class _NextPageState extends State<NextPage> {
     );
   }
 
+  Directionality bottomSheet6() {
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            "المراجع",
+            style: TextStyle(
+                color: CupertinoColors.black, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: Theme.of(context).canvasColor,
+          elevation: 1,
+        ),
+        body: ListView(
+          children: [
+            buildAutoSizeText(Teeth().res1, 16.00),
+            _textButton('https://doi.org/10.1007/s12098-017-2381-6'),
+            buildAutoSizeText(Teeth().res2, 16.00),
+            _textButton(
+                'https://www.mayoclinic.org/diseases-conditions/cavities/symptoms-causes/syc-20352892'),
+            buildAutoSizeText(Teeth().res3, 16.00),
+            buildAutoSizeText(Teeth().res4, 16.00),
+            buildAutoSizeText(Teeth().res5, 16.00),
+            _textButton(
+                'https://www.nidcr.nih.gov/health-info/tooth-decay/more-info/tooth-decay-process'),
+            buildAutoSizeText(Teeth().res6, 16.00),
+          ],
+        ),
+      ),
+    );
+  }
 }
