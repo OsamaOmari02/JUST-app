@@ -42,7 +42,7 @@ dependencies:
   google_fonts: ^2.3.1
   persistent_bottom_nav_bar: ^4.0.2
   url_launcher: ^6.0.20
-#  youtube_player_iframe: ^2.2.2
+  youtube_player_flutter:
 
 dev_dependencies:
   flutter_native_splash: ^1.2.1

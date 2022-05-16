@@ -6,6 +6,7 @@ import 'package:medical_info_just/info.dart';
 import 'package:medical_info_just/provider.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class NextPage extends StatefulWidget {
   const NextPage({Key? key}) : super(key: key);
@@ -15,109 +16,207 @@ class NextPage extends StatefulWidget {
 }
 
 class _NextPageState extends State<NextPage> {
+  late YoutubePlayerController controller;
+
+  @override
+  void initState() {
+      controller = YoutubePlayerController(
+          initialVideoId: Provider.of<MyProvider>(context, listen: false).idx == 'صحة الفم'? YoutubePlayer.convertUrlToId(
+              'https://www.youtube.com/watch?v=1Owg6Ens5yc')!: Provider.of<MyProvider>(context, listen: false).idx == 'أمراض اللثة'? YoutubePlayer.convertUrlToId(
+              'https://www.youtube.com/watch?v=zN7wznVUxIE')!: YoutubePlayer.convertUrlToId(
+              'https://www.youtube.com/watch?v=hE7J3FhZJHc')!,
+          flags: YoutubePlayerFlags(
+              autoPlay: false, controlsVisibleAtStart: true));
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Directionality(
-        textDirection: TextDirection.rtl,
-        child: WillPopScope(
-          onWillPop: () => Provider.of<MyProvider>(context, listen: false)
-              .onWillPop(context, 'NextPage'),
-          child: Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              title: Text(Provider.of<MyProvider>(context).idx),
-            ),
-            body: Provider.of<MyProvider>(context, listen: false).idx ==
-                    'صحة الفم'
-                ? ListView(
-                    padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
-                    children: [
-                      _listTile("سرطان الفم", 'MouthPage1'),
-                      _listTile("كسور ورضوض الأسنان", 'MouthPage2'),
-                      _listTile("تفريش الأسنان", 'MouthPage3'),
-                      _listTile("خيط الأسنان", 'MouthPage4'),
-                    ],
-                  )
+        child: Directionality(
+      textDirection: TextDirection.rtl,
+      child: WillPopScope(
+        onWillPop: () => Provider.of<MyProvider>(context, listen: false)
+            .onWillPop(context, 'NextPage'),
+        child: Provider.of<MyProvider>(context, listen: false).idx == 'صحة الفم'
+            ? YoutubePlayerBuilder(
+                player: YoutubePlayer(
+                  bottomActions: [
+                    FullScreenButton(),
+                    RemainingDuration(),
+                    ProgressBar(isExpanded: true),
+                    CurrentPosition(),
+                  ],
+                  showVideoProgressIndicator: true,
+                  controller: controller,
+                ),
+                builder: (context, player) => Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Scaffold(
+                        appBar: AppBar(
+                          centerTitle: true,
+                          title: Text(Provider.of<MyProvider>(context).idx),
+                        ),
+                        body: ListView(
+                          padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: player,
+                            ),
+                            _listTile("سرطان الفم", 'MouthPage1'),
+                            _listTile("كسور ورضوض الأسنان", 'MouthPage2'),
+                            _listTile("تفريش الأسنان", 'MouthPage3'),
+                            _listTile("خيط الأسنان", 'MouthPage4'),
+                          ],
+                        ),floatingActionButton: _floatingFun())
+                ))
+            : Provider.of<MyProvider>(context, listen: false).idx ==
+                    'طب الأسنان التجميلي'
+                ? Scaffold(
+                    appBar: AppBar(
+                      centerTitle: true,
+                      title: Text(Provider.of<MyProvider>(context).idx),
+                    ),
+                    body: ListView(
+                      padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
+                      children: [
+                        buildAutoSizeText(Nice().s1, 17.00),
+                        _listTile("التبييض", 'NicePage1'),
+                        _listTile("مجوهرات الأسنان", 'NicePage2'),
+                        _listTile("القشور الخزفية والزيريكون", 'NicePage3'),
+                        _listTile("الإبتسامة اللثوية", 'NicePage4'),
+                      ],
+                    ),floatingActionButton: _floatingFun())
                 : Provider.of<MyProvider>(context, listen: false).idx ==
-                        'طب الأسنان التجميلي'
-                    ? ListView(
-                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
-                        children: [
-                          buildAutoSizeText(Nice().s1, 17.00),
-                          _listTile("التبييض", 'NicePage1'),
-                          _listTile("مجوهرات الأسنان", 'NicePage2'),
-                          _listTile("القشور الخزفية والزيريكون", 'NicePage3'),
-                          _listTile("الإبتسامة اللثوية", 'NicePage4'),
-                        ],
-                      )
+                        'العلاج الوقائي'
+                    ? Scaffold(
+                        appBar: AppBar(
+                          centerTitle: true,
+                          title: Text(Provider.of<MyProvider>(context).idx),
+                        ),
+                        body: ListView(
+                          padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
+                          children: [
+                            buildAutoSizeText(Treat().s1, 16.00),
+                            _listTile("المادة السادة الوقائية", 'TreatPage1'),
+                            _listTile("الفلورايد", 'TreatPage2'),
+                            _listTile(
+                                "الزيارة المنتظمة لطبيب الاسنان", 'TreatPage3'),
+                          ],
+                        ),floatingActionButton: _floatingFun())
                     : Provider.of<MyProvider>(context, listen: false).idx ==
-                            'العلاج الوقائي'
-                        ? ListView(
-                            padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
-                            children: [
-                              buildAutoSizeText(Treat().s1, 16.00),
-                              _listTile("المادة السادة الوقائية", 'TreatPage1'),
-                              _listTile("الفلورايد", 'TreatPage2'),
-                              _listTile("الزيارة المنتظمة لطبيب الاسنان",
-                                  'TreatPage3'),
-                            ],
-                          )
+                            'العادات الفموية السيئة'
+                        ? Scaffold(
+                            appBar: AppBar(
+                              centerTitle: true,
+                              title: Text(Provider.of<MyProvider>(context).idx),
+                            ),
+                            body: ListView(
+                              padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
+                              children: [
+                                buildAutoSizeText(Habit().s1, 16.00),
+                                _listTile(
+                                    "استخدام الأسنان كأداة", 'HabitPage1'),
+                                _listTile("قضم الأظافر", 'HabitPage2'),
+                                _listTile("صرير الأسنان", 'HabitPage3'),
+                                _listTile("أخطاء تنظيف الأسنان", 'HabitPage4'),
+                                _listTile("قضم قطع الثلج", 'HabitPage5'),
+                                _listTile("الوجبات الخفيفة", 'HabitPage6'),
+                              ],
+                            ),floatingActionButton: _floatingFun())
                         : Provider.of<MyProvider>(context, listen: false).idx ==
-                                'العادات الفموية السيئة'
-                            ? ListView(
-                                padding:
-                                    const EdgeInsets.fromLTRB(10, 15, 10, 0),
-                                children: [
-                                  buildAutoSizeText(Habit().s1, 16.00),
-                                  _listTile(
-                                      "استخدام الأسنان كأداة", 'HabitPage1'),
-                                  _listTile("قضم الأظافر", 'HabitPage2'),
-                                  _listTile("صرير الأسنان", 'HabitPage3'),
-                                  _listTile(
-                                      "أخطاء تنظيف الأسنان", 'HabitPage4'),
-                                  _listTile("قضم قطع الثلج", 'HabitPage5'),
-                                  _listTile("الوجبات الخفيفة", 'HabitPage6'),
-                                ],
-                              )
+                                'أمراض اللثة'
+                            ? YoutubePlayerBuilder(
+                                player: YoutubePlayer(
+                                  bottomActions: [
+                                    FullScreenButton(),
+                                    RemainingDuration(),
+                                    ProgressBar(isExpanded: true),
+                                    CurrentPosition(),
+                                  ],
+                                  showVideoProgressIndicator: true,
+                                  controller: controller,
+                                ),
+                                builder: (context, player) => Directionality(
+                                    textDirection: TextDirection.rtl,
+                                    child: Scaffold(
+                                        appBar: AppBar(
+                                          centerTitle: true,
+                                          title: Text(
+                                              Provider.of<MyProvider>(context)
+                                                  .idx),
+                                        ),
+                                        body: ListView(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              10, 15, 10, 0),
+                                          children: [
+                                            const SizedBox(height: 20),
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: player,
+                                            ),
+                                            _listTile("أجزاء السن", 'DisPage1'),
+                                            _listTile("الأنسجة الداعمة للأسنان",
+                                                'DisPage2'),
+                                            _listTile(
+                                                "أمراض اللثة", 'DisPage3'),
+                                            _listTile("طرق الوقاية والعلاج",
+                                                'DisPage4'),
+                                          ],
+                                        ),floatingActionButton: _floatingFun())))
                             : Provider.of<MyProvider>(context, listen: false)
                                         .idx ==
-                                    'أمراض اللثة'
-                                ? ListView(
-                                    padding: const EdgeInsets.fromLTRB(
-                                        10, 15, 10, 0),
-                                    children: [
-                                      const SizedBox(height: 20),
-                                      _listTile("أجزاء السن", 'DisPage1'),
-                                      _listTile("الأنسجة الداعمة للأسنان",
-                                          'DisPage2'),
-                                      _listTile("أمراض اللثة", 'DisPage3'),
-                                      _listTile(
-                                          "طرق الوقاية والعلاج", 'DisPage4'),
-                                    ],
-                                  )
-                                : Provider.of<MyProvider>(context,
-                                                listen: false)
-                                            .idx ==
-                                        'تسوس الأسنان'
-                                    ? ListView(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            10, 15, 10, 0),
-                                        children: [
-                                          buildAutoSizeText(Teeth().s1, 16.00),
-                                          _listTile("أنواع ومراحل تسوس الأسنان", 'TeethPage1'),
-                                          _listTile("الأعراض والمضاعفات", 'TeethPage2'),
-                                          _listTile("طرق الوقاية والعلاج", 'TeethPage3'),
-                                        ],
-                                      )
-                                    : ListView(
-                                        children: [],
-                                      ),
-            floatingActionButton: _floatingFun(),
+                                    'تسوس الأسنان'
+                                ? YoutubePlayerBuilder(
+          player: YoutubePlayer(
+            bottomActions: [
+              FullScreenButton(),
+              RemainingDuration(),
+              ProgressBar(isExpanded: true),
+              CurrentPosition(),
+            ],
+            showVideoProgressIndicator: true,
+            controller: controller,
           ),
-        ),
+          builder: (context, player) => Directionality(
+            textDirection: TextDirection.rtl,
+            child: Scaffold(
+                                    appBar: AppBar(
+                                      centerTitle: true,
+                                      title: Text(
+                                          Provider.of<MyProvider>(context).idx),
+                                    ),
+                                    body: ListView(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          10, 15, 10, 0),
+                                      children: [
+                                        buildAutoSizeText(Teeth().s1, 16.00),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: player,
+                                        ),
+                                        _listTile("أنواع ومراحل تسوس الأسنان",
+                                            'TeethPage1'),
+                                        _listTile(
+                                            "الأعراض والمضاعفات", 'TeethPage2'),
+                                        _listTile("طرق الوقاية والعلاج",
+                                            'TeethPage3'),
+                                      ],
+                                    ),floatingActionButton: _floatingFun())))
+                                : Scaffold(
+                                    appBar: AppBar(
+                                      centerTitle: true,
+                                      title: Text(
+                                          Provider.of<MyProvider>(context).idx),
+                                    ),
+                                    body: ListView(
+                                      children: [],
+                                    ),
+                                    floatingActionButton: _floatingFun(),
+                                  ),
       ),
-    );
+    ));
   }
 
   Padding _listTile(text, route) {

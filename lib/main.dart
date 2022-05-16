@@ -184,7 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   funImage("العلاج الوقائي",
                       'images/العلاج الوقائي/العلاج الوقائي.jpg', 'NextPage'),
                   funImage("العادات الفموية السيئة",'images/Habit/1.png','NextPage'),
-                  funImage("أمراض اللثة",'images/Habit/1.png','NextPage'),
+                  funImage("أمراض اللثة",'images/Dis/12.png','NextPage'),
                   funImage("تسوس الأسنان",'images/Teeth/1.jpg','NextPage'),
                 ],
               ),

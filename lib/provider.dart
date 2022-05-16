@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class MyProvider with ChangeNotifier {
   Future<bool> onWillPop(BuildContext context, route) async {
@@ -12,6 +13,7 @@ class MyProvider with ChangeNotifier {
       await Navigator.of(context).pushReplacementNamed('NextPage');
     throw "";
   }
+
 //---------------------------Dark Mode-----------------------------
 //   bool isDark = false;
 //
@@ -29,7 +31,7 @@ class MyProvider with ChangeNotifier {
 //   }
 //---------------------------Widgets -----------------------------
 
-  String idx="";
+  String idx = "";
 
   Padding buildAutoSizeText(text, size, [color = Colors.black, weight]) {
     return Padding(
@@ -38,10 +40,12 @@ class MyProvider with ChangeNotifier {
         text,
         minFontSize: 14,
         style: GoogleFonts.ibmPlexSansArabic(
-          textStyle: TextStyle(fontSize: size, color: color, fontWeight: weight),
+          textStyle:
+              TextStyle(fontSize: size, color: color, fontWeight: weight),
         ),
         overflow: TextOverflow.fade,
       ),
     );
   }
+
 }
