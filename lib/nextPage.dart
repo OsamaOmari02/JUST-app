@@ -23,7 +23,8 @@ class _NextPageState extends State<NextPage> {
       controller = YoutubePlayerController(
           initialVideoId: Provider.of<MyProvider>(context, listen: false).idx == 'صحة الفم'? YoutubePlayer.convertUrlToId(
               'https://www.youtube.com/watch?v=1Owg6Ens5yc')!: Provider.of<MyProvider>(context, listen: false).idx == 'أمراض اللثة'? YoutubePlayer.convertUrlToId(
-              'https://www.youtube.com/watch?v=zN7wznVUxIE')!: YoutubePlayer.convertUrlToId(
+              'https://www.youtube.com/watch?v=zN7wznVUxIE')!: Provider.of<MyProvider>(context, listen: false).idx == 'العادات الفموية السيئة'? YoutubePlayer.convertUrlToId(
+              'https://www.youtube.com/watch?v=mm-wZE_hml8')!: YoutubePlayer.convertUrlToId(
               'https://www.youtube.com/watch?v=hE7J3FhZJHc')!,
           flags: YoutubePlayerFlags(
               autoPlay: false, controlsVisibleAtStart: true));
@@ -36,7 +37,7 @@ class _NextPageState extends State<NextPage> {
         child: Directionality(
       textDirection: TextDirection.rtl,
       child: WillPopScope(
-        onWillPop: () => Provider.of<MyProvider>(context, listen: false)
+        onWillPop: ()async=> await Provider.of<MyProvider>(context, listen: false)
             .onWillPop(context, 'NextPage'),
         child: Provider.of<MyProvider>(context, listen: false).idx == 'صحة الفم'
             ? YoutubePlayerBuilder(
@@ -107,15 +108,32 @@ class _NextPageState extends State<NextPage> {
                         ),floatingActionButton: _floatingFun())
                     : Provider.of<MyProvider>(context, listen: false).idx ==
                             'العادات الفموية السيئة'
-                        ? Scaffold(
-                            appBar: AppBar(
-                              centerTitle: true,
-                              title: Text(Provider.of<MyProvider>(context).idx),
-                            ),
-                            body: ListView(
+                        ? YoutubePlayerBuilder(
+    player: YoutubePlayer(
+    bottomActions: [
+    FullScreenButton(),
+    RemainingDuration(),
+    ProgressBar(isExpanded: true),
+    CurrentPosition(),
+    ],
+    showVideoProgressIndicator: true,
+    controller: controller,
+    ),
+    builder: (context, player) => Directionality(
+    textDirection: TextDirection.rtl,
+    child: Scaffold(
+    appBar: AppBar(
+    centerTitle: true,
+    title: Text(Provider.of<MyProvider>(context).idx),
+    ),
+    body: ListView(
                               padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                               children: [
                                 buildAutoSizeText(Habit().s1, 16.00),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: player,
+                                ),
                                 _listTile(
                                     "استخدام الأسنان كأداة", 'HabitPage1'),
                                 _listTile("قضم الأظافر", 'HabitPage2'),
@@ -124,7 +142,7 @@ class _NextPageState extends State<NextPage> {
                                 _listTile("قضم قطع الثلج", 'HabitPage5'),
                                 _listTile("الوجبات الخفيفة", 'HabitPage6'),
                               ],
-                            ),floatingActionButton: _floatingFun())
+                            ),floatingActionButton: _floatingFun())))
                         : Provider.of<MyProvider>(context, listen: false).idx ==
                                 'أمراض اللثة'
                             ? YoutubePlayerBuilder(

@@ -2,7 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medical_info_just/drawer.dart';
 import 'package:medical_info_just/provider.dart';
 import 'package:provider/provider.dart';
 
@@ -30,7 +29,7 @@ class _Mouth1State extends State<Mouth1> {
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: WillPopScope(
-          onWillPop: ()=> Provider.of<MyProvider>(context,listen: false).onWillPop(context,'page1'),
+          onWillPop: ()=> provider.onWillPop(context,'page1'),
           child: Scaffold(
             appBar: AppBar(
               centerTitle: true,

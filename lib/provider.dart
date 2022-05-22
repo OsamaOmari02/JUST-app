@@ -2,8 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class MyProvider with ChangeNotifier {
   Future<bool> onWillPop(BuildContext context, route) async {
@@ -14,21 +12,6 @@ class MyProvider with ChangeNotifier {
     throw "";
   }
 
-//---------------------------Dark Mode-----------------------------
-//   bool isDark = false;
-//
-//   getDarkMode() async {
-//     SharedPreferences pref = await SharedPreferences.getInstance();
-//     isDark = pref.getBool('darkMode') ?? false;
-//     notifyListeners();
-//   }
-//
-//   setDarkMode(value) async {
-//     SharedPreferences pref = await SharedPreferences.getInstance();
-//     pref.setBool('darkMode', value);
-//     isDark = value;
-//     notifyListeners();
-//   }
 //---------------------------Widgets -----------------------------
 
   String idx = "";
@@ -48,4 +31,6 @@ class MyProvider with ChangeNotifier {
     );
   }
 
+  int currentIndex = 0;
+  int prevIndex = 0;
 }

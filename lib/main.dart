@@ -8,6 +8,7 @@ import 'package:medical_info_just/Habit6.dart';
 import 'package:medical_info_just/Teeth2.dart';
 import 'package:medical_info_just/Teeth3.dart';
 import 'package:medical_info_just/Treat2.dart';
+import 'package:medical_info_just/aboutUs.dart';
 import 'package:medical_info_just/nextPage.dart';
 import 'package:medical_info_just/provider.dart';
 import 'package:medical_info_just/settings.dart';
@@ -58,7 +59,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       routes: {
         'MyHomePage': (context) => const MyHomePage(),
-        // 'settings': (context) => const Settings(),
+        'AboutUs': (context) => const AboutUs(),
         'NextPage': (context) => const NextPage(),
         'MouthPage1': (context) => const Mouth1(),
         'MouthPage2': (context) => const Mouth2(),
@@ -81,9 +82,9 @@ class MyApp extends StatelessWidget {
         'DisPage2': (context) => const Dis2(),
         'DisPage3': (context) => const Dis3(),
         'DisPage4': (context) => const Dis4(),
-        'TeethPage1' : (context) => const Teeth1(),
-        'TeethPage2' : (context) => const Teeth2(),
-        'TeethPage3' : (context) => const Teeth3(),
+        'TeethPage1': (context) => const Teeth1(),
+        'TeethPage2': (context) => const Teeth2(),
+        'TeethPage3': (context) => const Teeth3(),
       },
     );
   }
@@ -101,13 +102,15 @@ class _MyHomePageState extends State<MyHomePage> {
   double? height;
 
   getWidth() => width = MediaQuery.of(context).size.width;
+
   getHeight() => height = MediaQuery.of(context).size.height;
 
   Future<bool> _onWillPop() async {
     return (await showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: const Text('هل تريد الخروج؟',textDirection: TextDirection.rtl,
+            title: const Text('هل تريد الخروج؟',
+                textDirection: TextDirection.rtl,
                 style: TextStyle(fontSize: 21)),
             actions: <Widget>[
               TextButton(
@@ -133,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget funImage(title, image, route) {
     return ListTile(
       onTap: () {
-        Provider.of<MyProvider>(context,listen: false).idx = title;
+        Provider.of<MyProvider>(context, listen: false).idx = title;
         Navigator.of(context).pushNamed(route);
       },
       title: ClipRRect(
@@ -155,6 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context,listen: false);
     return SafeArea(
       child: WillPopScope(
         onWillPop: _onWillPop,
@@ -183,16 +187,39 @@ class _MyHomePageState extends State<MyHomePage> {
                       'NextPage'),
                   funImage("العلاج الوقائي",
                       'images/العلاج الوقائي/العلاج الوقائي.jpg', 'NextPage'),
-                  funImage("العادات الفموية السيئة",'images/Habit/1.png','NextPage'),
-                  funImage("أمراض اللثة",'images/Dis/12.png','NextPage'),
-                  funImage("تسوس الأسنان",'images/Teeth/1.jpg','NextPage'),
+                  funImage("العادات الفموية السيئة", 'images/Habit/1.png',
+                      'NextPage'),
+                  funImage("أمراض اللثة", 'images/Dis/12.png', 'NextPage'),
+                  funImage("تسوس الأسنان", 'images/Teeth/1.jpg', 'NextPage'),
                 ],
               ),
+            ),
+            bottomNavigationBar: BottomNavigationBar(
+              currentIndex: provider.currentIndex,
+              onTap: (index) { setState(() {
+                provider.currentIndex = index;
+              });
+              if (index==1 && provider.prevIndex!=1)
+                Navigator.of(context).pushReplacementNamed('AboutUs');
+              else if (index==0 && provider.prevIndex!=0)
+                Navigator.of(context).pushReplacementNamed('MyHomePage');
+              setState(() {
+                provider.prevIndex = index;
+              });
+              },
+              type: BottomNavigationBarType.fixed,
+              items: [
+                bottomNav(Icons.home, "الصفحة الرئيسية"),
+                bottomNav(Icons.perm_identity, "من نحن"),
+              ],
             ),
           ),
         ),
       ),
     );
+  }
+  bottomNav(icon,title){
+    return BottomNavigationBarItem(icon: Icon(icon),label: title,backgroundColor: Colors.greenAccent);
   }
 }
 
