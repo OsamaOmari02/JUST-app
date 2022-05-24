@@ -54,7 +54,7 @@ class _AboutUsState extends State<AboutUs> {
         child: Scaffold(
           appBar: const MainAppBar(title: "من نحن"),
           body: ListView(
-            padding: EdgeInsets.all(8.00),
+            padding: const EdgeInsets.all(8.00),
             children: [],
           ),
           bottomNavigationBar: BottomNavigationBar(

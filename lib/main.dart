@@ -133,11 +133,13 @@ class _MyHomePageState extends State<MyHomePage> {
         false;
   }
 
-  Widget funImage(title, image, route) {
+  Widget funImage(title, image) {
     return ListTile(
-      onTap: () {
-        Provider.of<MyProvider>(context, listen: false).idx = title;
-        Navigator.of(context).pushNamed(route);
+      onTap: () async{
+        setState(() {
+          Provider.of<MyProvider>(context, listen: false).idx = title;
+        });
+        await Navigator.of(context).pushNamed('NextPage');
       },
       title: ClipRRect(
         borderRadius: BorderRadius.circular(20.0),
@@ -180,17 +182,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 children: [
                   funImage(
-                      "صحة الفم", 'images/صحة الفم/صحة الفم.png', 'NextPage'),
+                      "صحة الفم", 'images/صحة الفم/صحة الفم.png'),
                   funImage(
                       "طب الأسنان التجميلي",
-                      'images/طب الاسنان التجميلي/طب الاسنان التجميلي.png',
-                      'NextPage'),
+                      'images/طب الاسنان التجميلي/طب الاسنان التجميلي.png'),
                   funImage("العلاج الوقائي",
-                      'images/العلاج الوقائي/العلاج الوقائي.jpg', 'NextPage'),
-                  funImage("العادات الفموية السيئة", 'images/Habit/1.png',
-                      'NextPage'),
-                  funImage("أمراض اللثة", 'images/Dis/12.png', 'NextPage'),
-                  funImage("تسوس الأسنان", 'images/Teeth/1.jpg', 'NextPage'),
+                      'images/العلاج الوقائي/العلاج الوقائي.jpg'),
+                  funImage("العادات الفموية السيئة", 'images/Habit/1.png'),
+                  funImage("أمراض اللثة", 'images/Dis/12.png'),
+                  funImage("تسوس الأسنان", 'images/Teeth/1.jpg'),
                 ],
               ),
             ),

@@ -5,11 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MyProvider with ChangeNotifier {
   Future<bool> onWillPop(BuildContext context, route) async {
-    if (route == 'NextPage')
-      await Navigator.of(context).pushReplacementNamed('MyHomePage');
-    else if (route == 'page1')
-      await Navigator.of(context).pushReplacementNamed('NextPage');
-    throw "";
+    return await true;
   }
 
 //---------------------------Widgets -----------------------------
