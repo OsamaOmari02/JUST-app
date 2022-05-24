@@ -7,10 +7,11 @@
             <data android:scheme="https" />
         </intent>
     </queries>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
-        android:label="medical_info_just">
+        android:label="سر الإبتسامة">
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
