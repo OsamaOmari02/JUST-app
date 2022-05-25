@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return (await showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: const Text('هل تريد الخروج؟',
+            title: const Text('هل تريد الخروج من التطبيق؟',
                 textDirection: TextDirection.rtl,
                 style: TextStyle(fontSize: 21)),
             actions: <Widget>[

@@ -1,7 +1,10 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:medical_info_just/info.dart';
 import 'package:medical_info_just/provider.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import 'main.dart';
@@ -20,7 +23,7 @@ class _AboutUsState extends State<AboutUs> {
     return (await showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: const Text('هل تريد الخروج؟',
+            title: const Text('هل تريد الخروج من التطبيق؟',
                 textDirection: TextDirection.rtl,
                 style: TextStyle(fontSize: 21)),
             actions: <Widget>[
@@ -60,6 +63,15 @@ class _AboutUsState extends State<AboutUs> {
     super.dispose();
   }
 
+  void _launchURL(email) async {
+    final Uri params = Uri(
+      scheme: 'mailto',
+      path: email,
+    );
+    String  url = params.toString();
+    await launch(url);
+  }
+  
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context, listen: false);
@@ -82,16 +94,25 @@ class _AboutUsState extends State<AboutUs> {
                   builder: (context, player) => Directionality(
                     textDirection: TextDirection.rtl,
                     child: Scaffold(
-                      appBar: const MainAppBar(title: "من نحن"),
-                      body: ListView(
-                        padding: const EdgeInsets.all(8.00),
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: player,
-                          ),
-
-                        ],
+                      appBar:
+                          const MainAppBar(title: "علوم طب الأسنان المساندة"),
+                      body: Scrollbar(
+                        child: ListView(
+                          padding: const EdgeInsets.all(12.00),
+                          children: [
+                            provider.buildAutoSizeText(aboutUs, 18.00),
+                            const SizedBox(height: 20),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: player,
+                            ),
+                            const SizedBox(height: 30),
+                            provider.buildAutoSizeText("للتواصل :", 17.00),
+                            email('ads@just.edu.jo'),
+                            email('tmfalah@just.edu.jo'),
+                            email('hala.banihani97@gmail.com'),
+                          ],
+                        ),
                       ),
                       bottomNavigationBar: BottomNavigationBar(
                         currentIndex: provider.currentIndex,
@@ -123,5 +144,13 @@ class _AboutUsState extends State<AboutUs> {
   bottomNav(icon, title) {
     return BottomNavigationBarItem(
         icon: Icon(icon), label: title, backgroundColor: Colors.greenAccent);
+  }
+
+  TextButton email(String email) {
+    return TextButton(
+        onPressed: () => _launchURL(email),
+        child: Text(email,
+            style: TextStyle(
+                color: Colors.blue, decoration: TextDecoration.underline)));
   }
 }

@@ -28,7 +28,6 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   provider: ^5.0.0
-  shared_preferences:
   auto_size_text: ^3.0.0
   flutter_launcher_icons: ^0.9.2
   flutter:
@@ -44,16 +43,8 @@ dependencies:
   youtube_player_flutter:
 
 dev_dependencies:
-  flutter_native_splash: ^1.2.1
   flutter_test:
     sdk: flutter
-
-#flutter_native_splash:
-#  color: "#ffffff"
-#  image:
-#  android_gravity: center
-#  android: true
-#  ios: true
 
 flutter_icons:
   android: true
