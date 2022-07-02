@@ -57,7 +57,7 @@ class _Habit4State extends State<Habit4> {
                     padding: const EdgeInsets.all(15.0),
                     child: Image.asset('images/Habit/6.png'),
                   ),
-                  provider.buildAutoSizeText("يمكن أن يساعدك الالتزام بهذه النصائح في الحفاظ على أسنانك نظيفة وصحة فمك ، مع التخلص من أعراض حساسية الأسنان.", 17.00,Colors.black,FontWeight.bold),
+                  provider.buildAutoSizeText("يمكن أن يساعدك الالتزام بهذه النصائح في الحفاظ على أسنانك نظيفة وصحة فمك ، مع التخلص من أعراض حساسية الأسنان. [5]", 17.00,Colors.black,FontWeight.bold),
                   SizedBox(height: getHeight() * 0.03),
                 ],
               ),

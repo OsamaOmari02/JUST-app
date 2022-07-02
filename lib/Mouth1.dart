@@ -55,7 +55,7 @@ class _Mouth1State extends State<Mouth1> {
                   provider.buildAutoSizeText(mouth().s5, 17.00),
                   provider.buildAutoSizeText(mouth().s6, 17.00),
                   provider.buildAutoSizeText("3- ضعف جهاز المناعة .", 17.00),
-                  provider.buildAutoSizeText("4- تعرض الشفاه الى أشعة الشمس لفترة طويلة .", 17.00),
+                  provider.buildAutoSizeText("4- تعرض الشفاه الى أشعة الشمس لفترة طويلة . [5]", 17.00),
                   SizedBox(height: getHeight() * 0.05),
                 ],
               ),

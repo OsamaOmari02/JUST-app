@@ -48,7 +48,7 @@ class _Mouth4State extends State<Mouth4> {
                   provider.buildAutoSizeText("● انواع خيط الأسنان :", 18.00,
                       Colors.green, FontWeight.bold),
                   provider.buildAutoSizeText(
-                      "المشع وغير المشع، ذو خيط احادي و متعدد الخيوط.", 17.00),
+                      "المشع وغير المشع، ذو خيط احادي و متعدد الخيوط. [12,13]", 17.00),
                   Image.asset('images/صحة الفم/11.png'),
                   provider.buildAutoSizeText("● فوائد استخدام خيط الأسنان :",
                       18.00, Colors.green, FontWeight.bold),
@@ -68,7 +68,7 @@ class _Mouth4State extends State<Mouth4> {
                           18.00, Colors.green, FontWeight.bold),
                       Expanded(child: SizedBox(width: 1)),
                       TextButton(
-                          child: Text("فيديو",
+                          child: Text("خيط الأسنان",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   decoration: TextDecoration.underline,

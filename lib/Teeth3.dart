@@ -63,10 +63,11 @@ class _Teeth3State extends State<Teeth3> {
                         children: [
                           SizedBox(height: getHeight() * 0.015),
                           provider.buildAutoSizeText(
-                              "● نصائح للمساعدة على الوقاية من تسوس الأسنان :",
+                              "● طرق الوقاية : [2]",
                               18.00,
                               Colors.lightGreen,
                               FontWeight.bold),
+                          provider.buildAutoSizeText("• نصائح للمساعدة على الوقاية من تسوس الأسنان.", 17.00),
                           provider.buildAutoSizeText(Teeth().s35, 17.00),
                           provider.buildAutoSizeText(Teeth().s36, 17.00),
                           Image.asset('images/Teeth/16.png'),
@@ -82,7 +83,7 @@ class _Teeth3State extends State<Teeth3> {
                           provider.buildAutoSizeText(Teeth().s42, 17.00),
                           provider.buildAutoSizeText(Teeth().s43, 17.00),
                           provider.buildAutoSizeText(
-                              "● بعض النصائح للآباء للمحافظة على أسنان أطفالهم :",
+                              "● بعض النصائح للآباء للمحافظة على أسنان أطفالهم : [1]",
                               18.00,
                               Colors.lightGreen,
                               FontWeight.bold),
@@ -126,7 +127,7 @@ class _Teeth3State extends State<Teeth3> {
                             child: player,
                           ),
                           provider.buildAutoSizeText(controller.metadata.title, 14.00,Colors.blue),
-                          provider.buildAutoSizeText("● طرق العلاج :", 18.00,
+                          provider.buildAutoSizeText("● طرق العلاج : [7]", 18.00,
                               Colors.lightGreen, FontWeight.bold),
                           provider.buildAutoSizeText(Teeth().s49, 17.00),
                           Image.asset('images/Teeth/25.jpg'),

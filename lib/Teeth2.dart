@@ -38,7 +38,7 @@ class _Teeth2State extends State<Teeth2> {
                 padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                 children: [
                   SizedBox(height: getHeight() * 0.015),
-                  provider.buildAutoSizeText("● الأعراض والعلامات :", 18.50,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText("● الأعراض والعلامات : [7]", 18.50,Colors.red,FontWeight.bold),
                   provider.buildAutoSizeText(Teeth().s25, 17.00),
                   provider.buildAutoSizeText("- ألم في الأسنان.", 17.00),
                   provider.buildAutoSizeText(Teeth().s26, 17.00),
@@ -48,7 +48,7 @@ class _Teeth2State extends State<Teeth2> {
                   provider.buildAutoSizeText(Teeth().s30, 17.00,Colors.black,FontWeight.bold),
                   provider.buildAutoSizeText(Teeth().s31, 17.00),
                   provider.buildAutoSizeText(Teeth().s32, 17.00),
-                  provider.buildAutoSizeText("● المضاعفات :", 18.50,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText("● المضاعفات : [2]", 18.50,Colors.red,FontWeight.bold),
                   provider.buildAutoSizeText(Teeth().s33, 17.00),
                   provider.buildAutoSizeText("- التهاب دواعم السن.", 17.00),
                   Padding(

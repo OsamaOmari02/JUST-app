@@ -51,7 +51,7 @@ class _Habit1State extends State<Habit1> {
                       child: Image.asset('images/Habit/2.png'),
                     ),
                     provider.buildAutoSizeText("● العلاج :", 18.00, Colors.lightGreen, FontWeight.bold),
-                    provider.buildAutoSizeText("يجب ترك هذه العادة لما لها من اثر سلبي على الاسنان.", 17.00),
+                    provider.buildAutoSizeText("يجب ترك هذه العادة لما لها من اثر سلبي على الاسنان. [1]", 17.00),
                     SizedBox(height: getHeight() * 0.03),
                   ],
                 ),
@@ -61,6 +61,5 @@ class _Habit1State extends State<Habit1> {
         ),
       );
   }
-
 }
 

@@ -62,7 +62,7 @@ class _Habit3State extends State<Habit3> {
                   provider.buildAutoSizeText("● أسباب صرير الأسنان ليست واضحة تمامًا", 18.00,
                       Colors.red, FontWeight.bold),
                   provider.buildAutoSizeText(Habit().s14, 17.00),
-                  provider.buildAutoSizeText("* لا يوجد علاج واحد فعال للقضاء على صرير الأسنان أو حتى تقليله.", 18.00,
+                  provider.buildAutoSizeText("* لا يوجد علاج واحد فعال للقضاء على صرير الأسنان أو حتى تقليله. [4]", 18.00,
                       Colors.red, FontWeight.bold),
                   SizedBox(height: getHeight() * 0.03),
                 ],
