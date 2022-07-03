@@ -462,6 +462,8 @@ class _NextPageState extends State<NextPage> {
                 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3713859/.'),
             _textButton(
                 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6312728/.'),
+            _textButton(
+                'https://www.health.harvard.edu/staying-healthy/tooth-bleaching.'),
           ],
         ),
       ),

@@ -67,13 +67,13 @@ class _Treat2State extends State<Treat2> {
                         padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                         children: [
                           SizedBox(height: getHeight() * 0.01),
-                          provider.buildAutoSizeText("● المفهوم :", 18.00, Colors.lightGreen, FontWeight.bold),
+                          provider.buildAutoSizeText("● المفهوم : [7]", 18.00, Colors.lightGreen, FontWeight.bold),
                           provider.buildAutoSizeText(Treat().s11, 17.00),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: player,
                           ),
-                          provider.buildAutoSizeText("● إعطاء الفلوريد :",
+                          provider.buildAutoSizeText("● إعطاء الفلوريد : [7]",
                               18.00, Colors.lightGreen, FontWeight.bold),
                           provider.buildAutoSizeText(
                               "1. موضعيا :", 17.00, Colors.orange),
@@ -81,7 +81,7 @@ class _Treat2State extends State<Treat2> {
                           provider.buildAutoSizeText(
                               "2. نظاميا :", 18.00, Colors.orange),
                           provider.buildAutoSizeText(Treat().s13, 17.00),
-                          provider.buildAutoSizeText("● أنواع الفلورايد :",
+                          provider.buildAutoSizeText("● أنواع الفلورايد : [8]",
                               18.00, Colors.lightGreen, FontWeight.bold),
                           provider.buildAutoSizeText(
                               "1- فلوريد الصوديوم :", 17.50, Colors.red),
@@ -98,7 +98,7 @@ class _Treat2State extends State<Treat2> {
                               "4- فارنيش الفلوريد( طلاء) :", 17.50, Colors.red),
                           provider.buildAutoSizeText(Treat().s17, 17.00),
                           provider.buildAutoSizeText(
-                              "● كيف يكون الفلورايد فارنيش  مفيد للأطفال ؟",
+                              "● كيف يكون الفلورايد فارنيش  مفيد للأطفال ؟ [9]",
                               18.00,
                               Colors.lightGreen,
                               FontWeight.bold),
@@ -120,7 +120,7 @@ class _Treat2State extends State<Treat2> {
                                   print(e);
                                 }
                               }),
-                          provider.buildAutoSizeText("● الاستطبابات والفوائد :",
+                          provider.buildAutoSizeText("● الاستطبابات والفوائد : [10]",
                               18.00, Colors.lightGreen, FontWeight.bold),
                           provider.buildAutoSizeText(Treat().s20, 17.00),
                           provider.buildAutoSizeText(
@@ -135,7 +135,7 @@ class _Treat2State extends State<Treat2> {
                               FontWeight.bold),
                           provider.buildAutoSizeText(Treat().s22, 17.00),
                           provider.buildAutoSizeText(
-                              "- تشير الدراسات ان  الاستهلاك الزائد للفلوريد قد يؤثر على :",
+                              "- تشير الدراسات ان  الاستهلاك الزائد للفلوريد قد يؤثر على : [11]",
                               18.00,
                               Colors.orange,
                               FontWeight.bold),
@@ -153,7 +153,7 @@ class _Treat2State extends State<Treat2> {
                           provider.buildAutoSizeText("4. الأسنان :", 17.50,
                               Colors.red, FontWeight.bold),
                           provider.buildAutoSizeText(Treat().s25, 17.00),
-                          provider.buildAutoSizeText("5. الغدة الدرقية :",
+                          provider.buildAutoSizeText("5. الغدة الدرقية : [12]",
                               17.50, Colors.red, FontWeight.bold),
                           provider.buildAutoSizeText(Treat().s26, 17.00),
                           provider.buildAutoSizeText(
@@ -169,7 +169,7 @@ class _Treat2State extends State<Treat2> {
                             padding: const EdgeInsets.all(12.0),
                             child: Image.asset('images/العلاج الوقائي/4.jpg'),
                           ),
-                          provider.buildAutoSizeText("● مزايا نظام القوالب :",
+                          provider.buildAutoSizeText("● مزايا نظام القوالب : [13]",
                               18.00, Colors.lightGreen, FontWeight.bold),
                           provider.buildAutoSizeText(Treat().s29, 17.00),
                           Center(
@@ -181,7 +181,7 @@ class _Treat2State extends State<Treat2> {
                             child: Image.asset('images/العلاج الوقائي/5.jpg'),
                           ),
                           provider.buildAutoSizeText(
-                              "● تعليمات ما بعد تطبيق الفلورايد في العيادة :",
+                              "● تعليمات ما بعد تطبيق الفلورايد في العيادة : [13]",
                               18.00,
                               Colors.lightGreen,
                               FontWeight.bold),

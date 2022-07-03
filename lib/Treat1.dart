@@ -84,19 +84,25 @@ class _Treat1State extends State<Treat1> {
                             child: Image.asset('images/العلاج الوقائي/1.jpg'),
                           ),
                           provider.buildAutoSizeText(
-                              "● كيف تحمي المواد السادة الوقائية الاسنان ؟",
+                              "● كيف تحمي المواد السادة الوقائية الاسنان ؟ [5]",
                               17.50,
                               Colors.lightGreen,
                               FontWeight.bold),
                           provider.buildAutoSizeText(Treat().s4, 17.00),
                           provider.buildAutoSizeText(
-                              "● كيفية الاعتناء بالاسنان بعد الحصول علي المادة السادة الوقائية ؟",
+                              "● كيفية الاعتناء بالاسنان بعد الحصول علي المادة السادة الوقائية ؟ [3]",
                               17.50,
                               Colors.lightGreen,
                               FontWeight.bold),
                           provider.buildAutoSizeText(Treat().s5, 17.00),
                           provider.buildAutoSizeText(
-                              "● فعالية المادة السادة الوقائية :",
+                              "● بعض النصائح المنزلية : [2]",
+                              17.50,
+                              Colors.lightGreen,
+                              FontWeight.bold),
+                          provider.buildAutoSizeText(Treat().s43, 17.00),
+                          provider.buildAutoSizeText(
+                              "● فعالية المادة السادة الوقائية : [2]",
                               18.00,
                               Colors.lightGreen,
                               FontWeight.bold),
@@ -121,14 +127,14 @@ class _Treat1State extends State<Treat1> {
                               17.00),
                           provider.buildAutoSizeText(Treat().s8, 17.00),
                           provider.buildAutoSizeText(
-                              "* موانع استخدامه هو للمرضى أو الأسنان الأقل عرضةً للتسوس. وهو يتضمن المرضى الذين لديهم :",
+                              "* موانع استخدامه هو للمرضى أو الأسنان الأقل عرضةً للتسوس. وهو يتضمن المرضى الذين لديهم : [1]",
                               17.50),
                           provider.buildAutoSizeText(Treat().s9, 17.00),
                           Padding(
                             padding: const EdgeInsets.all(12.0),
                             child: Image.asset('images/العلاج الوقائي/3.png'),
                           ),
-                          provider.buildAutoSizeText("● طريقة تطبيقه :", 18.00,
+                          provider.buildAutoSizeText("● طريقة تطبيقه : [4]", 18.00,
                               Colors.lightGreen, FontWeight.bold),
                           provider.buildAutoSizeText(
                               "الطريقة المستخدمة تعتمد على المادة المستخدمة.",

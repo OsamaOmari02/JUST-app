@@ -42,12 +42,13 @@ class _Treat3State extends State<Treat3> {
                 children: [
                   SizedBox(height: getHeight() * 0.01),
                   provider.buildAutoSizeText(
-                      "* من المهم أن ترى طبيب أسنانك كل ستة أشهر وأن يقوم بفحصك وتنظيف اسنانك بشكل دوري.",
+                      "من المهم أن ترى طبيب أسنانك كل ستة أشهر وأن يقوم بفحصك وتنظيف اسنانك بشكل دوري. [15]",
                       18.00),
+                  provider.buildAutoSizeText("● طريقة العلاج :", 18.00,Colors.lightGreen,FontWeight.bold),
                   provider.buildAutoSizeText(Treat().s34, 17.00),
                   provider.buildAutoSizeText(Treat().s35, 17.00),
                   provider.buildAutoSizeText(
-                      "● أهمية الزيارة المنتظمة لطبيب الاسنان :",
+                      "● مزايا وفوائد الزيارة المنتظمة لطبيب الأسنان : [16]",
                       17.50,
                       Colors.lightGreen,
                       FontWeight.bold),
@@ -58,6 +59,7 @@ class _Treat3State extends State<Treat3> {
                       Colors.orange,
                       FontWeight.bold),
                   provider.buildAutoSizeText(Treat().s37, 17.00),
+                  provider.buildAutoSizeText(Treat().s44, 17.00),
                   provider.buildAutoSizeText(
                       "● إيقاف جميع أشكال التدخين و الكحول :",
                       18.00,
