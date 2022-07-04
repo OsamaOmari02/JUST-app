@@ -60,29 +60,29 @@ class _Treat3State extends State<Treat3> {
                       FontWeight.bold),
                   provider.buildAutoSizeText(Treat().s37, 17.00),
                   provider.buildAutoSizeText(Treat().s44, 17.00),
-                  provider.buildAutoSizeText(
-                      "● إيقاف جميع أشكال التدخين و الكحول :",
-                      18.00,
-                      Colors.lightGreen,
-                      FontWeight.bold),
-                  provider.buildAutoSizeText(Treat().s38, 17.00),
-                  provider.buildAutoSizeText(
-                      "● يمكن تصنيف آثار التدخين وشرب الكحوليات على الفم والأسنان في ثلاث مجموعات هي :",
-                      17.50,
-                      Colors.red,
-                      FontWeight.bold),
-                  provider.buildAutoSizeText(
-                      "1. الأسنان :", 17.20, Colors.black, FontWeight.bold),
-                  provider.buildAutoSizeText(Treat().s39, 17.00),
-                  provider.buildAutoSizeText(
-                      "2. اللثة :", 17.20, Colors.black, FontWeight.bold),
-                  provider.buildAutoSizeText(Treat().s40, 17.00),
-                  provider.buildAutoSizeText(
-                      "3. أنسجة الفم واللسان :",
-                      17.20, Colors.black, FontWeight.bold),
-                  provider.buildAutoSizeText(Treat().s41, 17.00),
-                  provider.buildAutoSizeText("● نصائح من أجل الإقلاع عن التدخين والكحول وهي كما يلي :", 18.00, Colors.lightGreen, FontWeight.bold),
-                  provider.buildAutoSizeText(Treat().s42, 17.00),
+                  // provider.buildAutoSizeText(
+                  //     "● إيقاف جميع أشكال التدخين و الكحول :",
+                  //     18.00,
+                  //     Colors.lightGreen,
+                  //     FontWeight.bold),
+                  // provider.buildAutoSizeText(Treat().s38, 17.00),
+                  // provider.buildAutoSizeText(
+                  //     "● يمكن تصنيف آثار التدخين وشرب الكحوليات على الفم والأسنان في ثلاث مجموعات هي :",
+                  //     17.50,
+                  //     Colors.red,
+                  //     FontWeight.bold),
+                  // provider.buildAutoSizeText(
+                  //     "1. الأسنان :", 17.20, Colors.black, FontWeight.bold),
+                  // provider.buildAutoSizeText(Treat().s39, 17.00),
+                  // provider.buildAutoSizeText(
+                  //     "2. اللثة :", 17.20, Colors.black, FontWeight.bold),
+                  // provider.buildAutoSizeText(Treat().s40, 17.00),
+                  // provider.buildAutoSizeText(
+                  //     "3. أنسجة الفم واللسان :",
+                  //     17.20, Colors.black, FontWeight.bold),
+                  // provider.buildAutoSizeText(Treat().s41, 17.00),
+                  // provider.buildAutoSizeText("● نصائح من أجل الإقلاع عن التدخين والكحول وهي كما يلي :", 18.00, Colors.lightGreen, FontWeight.bold),
+                  // provider.buildAutoSizeText(Treat().s42, 17.00),
                 ],
               ),
             ),
