@@ -63,7 +63,7 @@ class _Dis4State extends State<Dis4> {
               children: [
                 SizedBox(height: getHeight() * 0.015),
                 provider.buildAutoSizeText(
-                    "● طرق الوقاية والعلاج من التهاب اللثة :", 18.00, Colors.lightGreen, FontWeight.bold),
+                    "● طرق الوقاية والعلاج من إلتهاب اللثة : [2]", 18.00, Colors.lightGreen, FontWeight.bold),
                 provider.buildAutoSizeText(Dis().s27, 17.00),
                 Image.asset('images/Dis/24.png'),
                 provider.buildAutoSizeText(Dis().s28, 17.00),
@@ -74,10 +74,10 @@ class _Dis4State extends State<Dis4> {
                   child: Image.asset('images/Dis/26.png'),
                 ),
                 provider.buildAutoSizeText("* من أنواع الغسول :", 18.00,Colors.blue),
-                provider.buildAutoSizeText("الغسول اليومي: لمكافحة التسوس والحفاظ على رائحة الفم.\nالغسول العلاجي: لعلاج الالتهابات اللثوية.", 17.50),
+                provider.buildAutoSizeText("الغسول اليومي: لمكافحة التسوس والحفاظ على رائحة الفم.\nالغسول العلاجي: لعلاج الإلتهابات اللثوية.", 17.50),
                 provider.buildAutoSizeText(Dis().s30, 17.00),
                 provider.buildAutoSizeText(Dis().s31, 17.00),
-                provider.buildAutoSizeText("● كيفية تقييم وضع اللثة :", 18.00,Colors.lightGreen,FontWeight.bold),
+                provider.buildAutoSizeText("● كيفية تقييم وضع اللثة : [5]", 18.00,Colors.lightGreen,FontWeight.bold),
                 provider.buildAutoSizeText("1- الفحص السريري يتضمن تقدير ما يلي :", 17.00,Colors.black,FontWeight.bold),
                 provider.buildAutoSizeText(Dis().s32, 17.00),
                 Padding(
@@ -101,7 +101,7 @@ class _Dis4State extends State<Dis4> {
                 ),
                 provider.buildAutoSizeText("2- الفحص بواسطة صور الأشعة :", 17.00,Colors.black,FontWeight.bold),
                 provider.buildAutoSizeText("لمعرفة مقدار تآكل وذوبان عظم الفك بسبب الإلتهاب إما بواسطة صور الأشعة الجانبية، البانورامية، أو البسيطة.", 17.00),
-                provider.buildAutoSizeText("● العلاج / الإدارة :", 18.00,Colors.lightGreen,FontWeight.bold),
+                provider.buildAutoSizeText("● العلاج / الإدارة : [5,1]", 18.00,Colors.lightGreen,FontWeight.bold),
                 provider.buildAutoSizeText("1) التغيرات السلوكية :", 18.00,Colors.black,FontWeight.bold),
                 provider.buildAutoSizeText(Dis().s34, 17.00),
                 Padding(

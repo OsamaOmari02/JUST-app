@@ -40,13 +40,13 @@ class _Dis1State extends State<Dis1> {
                 padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
                 children: [
                   SizedBox(height: getHeight() * 0.015),
-                  provider.buildAutoSizeText("● أجزاء السن :", 18.00,Colors.lightGreen,FontWeight.bold),
+                  provider.buildAutoSizeText("● أجزاء السن : [6]", 18.00,Colors.lightGreen,FontWeight.bold),
                   provider.buildAutoSizeText("• كل سن يتكون من :", 17.00),
                   provider.buildAutoSizeText(Dis().s1, 17.00),
                   provider.buildAutoSizeText(Dis().s2, 17.00),
                   Image.asset('images/Dis/1.png'),
                   provider.buildAutoSizeText(
-                      "● يتكون السن من أربع طبقات ثلاث منها صلبة وواحدة غير صلبة :", 18.00, Colors.lightGreen, FontWeight.bold),
+                      "● يتكون السن من أربع طبقات ثلاث منها صلبة وواحدة غير صلبة : [6]", 18.00, Colors.lightGreen, FontWeight.bold),
                   provider.buildAutoSizeText("• أولا :\nثلاث طبقات صلبة :", 17.00),
                   provider.buildAutoSizeText(Dis().s3, 17.00),
                   provider.buildAutoSizeText(Dis().s4, 17.00),

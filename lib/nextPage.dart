@@ -71,6 +71,9 @@ class _NextPageState extends State<NextPage> {
                         appBar: AppBar(
                           centerTitle: true,
                           title: Text(Provider.of<MyProvider>(context).idx),
+                          actions: [
+                            contactIcon('reemsafa@just.edu.jo'),
+                          ],
                         ),
                         body: ListView(
                           padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
@@ -92,6 +95,9 @@ class _NextPageState extends State<NextPage> {
                     appBar: AppBar(
                       centerTitle: true,
                       title: Text(Provider.of<MyProvider>(context).idx),
+                      actions: [
+                        contactIcon('malkawiz@just.edu.jo'),
+                      ],
                     ),
                     body: ListView(
                       padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
@@ -112,6 +118,9 @@ class _NextPageState extends State<NextPage> {
                             appBar: AppBar(
                               centerTitle: true,
                               title: Text(Provider.of<MyProvider>(context).idx),
+                              actions: [
+                                contactIcon('hala.banihani97@gmail.com'),
+                              ],
                             ),
                             body: ListView(
                               padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
@@ -148,6 +157,9 @@ class _NextPageState extends State<NextPage> {
                                           title: Text(
                                               Provider.of<MyProvider>(context)
                                                   .idx),
+                                          actions: [
+                                            contactIcon('ammahasneh@just.edu.jo'),
+                                          ],
                                         ),
                                         body: ListView(
                                           padding: const EdgeInsets.fromLTRB(
@@ -199,6 +211,9 @@ class _NextPageState extends State<NextPage> {
                                                   Provider.of<MyProvider>(
                                                           context)
                                                       .idx),
+                                              actions: [
+                                                contactIcon('saobeidat@just.edu.jo'),
+                                              ],
                                             ),
                                             body: ListView(
                                               padding:
@@ -251,6 +266,9 @@ class _NextPageState extends State<NextPage> {
                                                                   MyProvider>(
                                                               context)
                                                           .idx),
+                                                      actions: [
+                                                        contactIcon('tmfalah@just.edu.jo'),
+                                                      ],
                                                     ),
                                                     body: ListView(
                                                       padding: const EdgeInsets
@@ -603,5 +621,19 @@ class _NextPageState extends State<NextPage> {
         ),
       ),
     );
+  }
+
+  IconButton contactIcon(email) {
+    return IconButton(
+        onPressed: () => _launchURL(email),
+        icon: const Icon(Icons.contact_mail));
+  }
+  void _launchURL(email) async {
+    final Uri params = Uri(
+      scheme: 'mailto',
+      path: email,
+    );
+    String url = params.toString();
+    await launch(url);
   }
 }

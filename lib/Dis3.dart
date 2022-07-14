@@ -41,7 +41,7 @@ class _Dis3State extends State<Dis3> {
                   provider.buildAutoSizeText(
                       "● المفهوم :", 18.00, Colors.lightGreen, FontWeight.bold),
                   provider.buildAutoSizeText(Dis().s20, 17.00),
-                  provider.buildAutoSizeText("● اللثة السليمة: تشمل مواصفات اللثة السليمة:", 18.00,Colors.lightGreen,FontWeight.bold),
+                  provider.buildAutoSizeText("● اللثة السليمة: تشمل مواصفات اللثة السليمة : [5,2]", 18.00,Colors.lightGreen,FontWeight.bold),
                   provider.buildAutoSizeText(Dis().s21, 17.50),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
@@ -53,7 +53,7 @@ class _Dis3State extends State<Dis3> {
                     padding: const EdgeInsets.all(15.0),
                     child: Image.asset('images/Dis/5.png'),
                   ),
-                  provider.buildAutoSizeText("● علامات وأعراض إلتهاب اللثة :", 18.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText("● علامات وأعراض إلتهاب اللثة : [2]", 18.00,Colors.red,FontWeight.bold),
                   provider.buildAutoSizeText("1- لثة متورمة أو منتفخة.\n2- احمرار اللثة الداكن.\n3- حواف اللثة مستديرة ولامعة.", 17.50),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
@@ -65,20 +65,20 @@ class _Dis3State extends State<Dis3> {
                     child: Image.asset('images/Dis/15.png'),
                   ),
                   provider.buildAutoSizeText("5- نفس برائحة كريهة.", 17.50),
-                  provider.buildAutoSizeText("● أنواع التهاب اللثة :", 18.00,Colors.red,FontWeight.bold),
-                  provider.buildAutoSizeText("1- التهاب اللثة الناتج عن تراكم البلاك :", 18.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText("● أنواع إلتهاب اللثة : [2,1]", 18.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText("1- إلتهاب اللثة الناتج عن تراكم البلاك :", 18.00,Colors.red,FontWeight.bold),
                   provider.buildAutoSizeText(Dis().s23, 17.00),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Image.asset('images/Dis/16.png'),
                   ),
-                  provider.buildAutoSizeText("2- التهاب اللثة التقرحي الناخر :", 18.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText("2- إلتهاب اللثة التقرحي الناخر :", 18.00,Colors.red,FontWeight.bold),
                   provider.buildAutoSizeText(Dis().s24, 17.00),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Image.asset('images/Dis/17.jpg'),
                   ),
-                  provider.buildAutoSizeText("3- التهاب اللثة كعرض للأمراض الجهازية :", 18.00,Colors.red,FontWeight.bold),
+                  provider.buildAutoSizeText("3- إلتهاب اللثة كعرض للأمراض الجهازية :", 18.00,Colors.red,FontWeight.bold),
                   provider.buildAutoSizeText(Dis().s25, 17.00),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
